@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="renderer" content="webkit"><meta property="qc:admins" content="15317273575564615446375"><meta property="og:image" content="https://static.segmentfault.com/v-5924f5b0/global/img/touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="alexaVerifyID" content="LkzCRJ7rPEUwt6fVey2vhxiw1vQ"><meta name="apple-itunes-app" content="app-id=958101793, app-argument="><title> ReactiveCocoa,最受欢迎的iOS函数响应式编程库(2.5版),没有之一!   - iOS122-移动混合开发研究院 - SegmentFault</title><meta name="description" content="简介 项目主页: ReactiveCocoa 实例下载: https://github.com/ios122/ios122 简评: 最受欢迎,最有价值的iOS响应式编程库,没有之一!iOS MVVM模式的完美搭档,更多关于MVVM与ReactiveCocoa的讨论,参考这篇文章: 【长..."><meta name="keywords" content="mvvm,reactivecocoa"><link rel="search" type="application/opensearchdescription+xml" href="https://segmentfault.com/opensearch.xml" title="SegmentFault"><link rel="shortcut icon" href="https://static.segmentfault.com/v-5924f5b0/global/img/favicon.ico"><link rel="apple-touch-icon" href="https://static.segmentfault.com/v-5924f5b0/global/img/touch-icon.png"><meta name="msapplication-TileColor" content="#009a61"><meta name="msapplication-square150x150logo" content="https://static.segmentfault.com/v-5924f5b0/global/img/touch-icon.png"><link rel="alternate" type="application/atom+xml" title="SegmentFault 最新问题" href="https://segmentfault.com/feeds/questions"><link rel="alternate" type="application/atom+xml" title="SegmentFault 最新文章" href="https://segmentfault.com/feeds/blogs"><link rel="stylesheet" href="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/global.css"><link rel="stylesheet" href="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/blog.css"><link rel="stylesheet" href="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/responsive.css"></head><body data-mod="blog" class="blog-post "><!--[if lt IE 9]><div class="alert alert-danger topframe" role="alert">你的浏览器实在<strong>太太太太太太旧了</strong>，放学别走，升级完浏览器再说 <a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div><![endif]--><img id="icon4weChat" style="height: 0;width: 0;" data-src="https://static.segmentfault.com/v-5924f5b0/global/img/touch-icon-512.png"><div class="global-nav sf-header sf-header--index"><nav class="container nav"><div class="hidden-sm hidden-lg hidden-md"><div class="sf-header__logo sf-header__logo--response"><h1><a></a></h1></div><div class="dropdown m-menu"><a href="javascript:void(0);" id="dLabel" class="visible-xs-block m-toptools" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-align-justify"></span><span class="mobile-menu__unreadpoint"></span></a><ul class="dropdown-menu" role="menu" aria-labelledby="dLabel"><li class="mobile-menu__item"><a href="https://segmentfault.com/">首页</a></li><li class="mobile-menu__item"><a href="https://segmentfault.com/news" class="menu__item--new-show">头条</a></li><li class="mobile-menu__item"><a href="https://segmentfault.com/questions">问答</a></li><li class="mobile-menu__item"><a href="https://segmentfault.com/blogs">专栏</a></li><li class="mobile-menu__item"><a href="https://segmentfault.com/lives" class="menu__item--new-show">讲堂</a></li><li class="mobile-menu__item"><a href="https://segmentfault.com/jobs">职位</a></li><li class="mobile-menu__item"><a href="https://segmentfault.com/events">活动</a></li><li class="mobile-menu__item"><a href="https://segmentfault.com/notes">笔记</a></li><li class="mobile-menu__item"><a href="https://segmentfault.com/tags">标签</a></li><li class="mobile-menu__item"><a href="https://segmentfault.com/users">榜单</a></li></ul></div><a href="https://segmentfault.com/user/login" class="visible-xs-block pull-right m-ask m-toptools"><span class="glyphicon glyphicon-log-in"></span></a></div><div class="row hidden-xs"><div class="col-sm-8 col-md-8 col-lg-7"><div class="sf-header__logo"><h1><a href="https://segmentfault.com/">SegmentFault</a></h1></div><ul class="menu list-inline pull-left hidden-xs"><li class="menu__item"><a href="https://segmentfault.com/news" class="menu__item--new-show">头条</a></li><li class="menu__item"><a href="https://segmentfault.com/questions">问答</a></li><li class="menu__item"><a href="https://segmentfault.com/blogs">专栏</a></li><li class="menu__item"><a href="https://segmentfault.com/lives" class="menu__item--new-show">讲堂</a></li><li class="menu__item"><a href="https://segmentfault.com/jobs">职位</a></li><li class="menu__item ml0"><a href="https://segmentfault.com/events">活动</a></li></ul></div><div class="col-sm-4 col-md-4 col-lg-5 text-right"><form action="/search" class="header-search  hidden-sm hidden-xs mr20"><button class="btn btn-link"><span class="sr-only">搜索</span><span class="glyphicon glyphicon-search"></span></button><input id="searchBox" name="q" placeholder="输入关键字搜索" class="form-control" type="text"></form><ul class="opts list-inline hidden-xs"><li class="opts__item message has-unread"><a target="_blank" href="https://segmentfault.com/tour"><span class="sr-only">消息</span><span id="messageCount" class="fa fa-hand-peace-o"></span></a></li><li class="opts__item"><a href="https://segmentfault.com/user/login" class="SFLogin em ml10" onclick="_gaq.push(['_trackEvent', 'Button', 'Click', 'Login']);">注册 ·
+                                        登录</a></li></ul></div></div></nav></div><div class="global-navTags"><div class="container"><nav class=" nav"><ul class="nav__list"><li class="nav__item"><a href="https://segmentfault.com/"><i class="fa fa-home"></i>home
+                            </a></li><li class="nav__item nav__item--split"><a><span class="split"></span></a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/javascript">javascript</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/php">php</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/python">python</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/java">java</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/mysql">mysql</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/ios">ios</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/android">android</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/node.js">node.js</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/html5">html5</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/linux">linux</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/c%2B%2B">c++</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/css3">css3</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/git">git</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/golang">golang</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/ruby">ruby</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/vim">vim</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/docker">docker</a></li><li class="nav__item tag-nav__item"><a href="https://segmentfault.com/t/mongodb">mongodb</a></li><li class="nav__item nav__item--more" data-open="0"><a class="nav__item--more-link" href="https://segmentfault.com/tags"><div class="tag__more"><i class="tag__more--icon"></i><i class="tag__more--icon"></i><i class="tag__more--icon"></i></div></a></li></ul><div class="tag-mgr__box hide"><input class="tag-mgr__query" placeholder="搜索关注的标签" data-tags="null" type="text"><div class="mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="position: relative; overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: 0px;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr"><ul class="tag-mgr__list"></ul></div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; top: 0px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div><a href="https://segmentfault.com/tags" class="btn btn-primary btn-sm tag-mgr__btn">标签管理</a></div></nav></div></div>
+    <div class="wrap" data-blogid="1200000003496842">
+    <div class="post-topheader custom-">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-8 col-xs-12">
+                    <span class="post-topheader__title--icon-symbol">文</span>
+
+                    <div class="post-topheader__info" data-username="iOS122" data-userslug="ios122" data-useravatar="https://sfault-avatar.b0.upaiyun.com/163/308/1633086918-57c1f48e1347c_big64">
+
+                        <h1 class="h3 post-topheader__info--title" id="articleTitle" data-id="1190000003878904">
+
+                            <a href="https://segmentfault.com/a/1190000003878904">  ReactiveCocoa,最受欢迎的iOS函数响应式编程库(2.5版),没有之一!  </a>
+                        </h1>
+
+                        <ul class="taglist--inline inline-block article__title--tag mr10">
+                                                            <li class="tagPopup mb5"><a class="tag" href="https://segmentfault.com/t/mvvm/blogs" data-toggle="popover" data-img="" data-placement="top" data-original-title="mvvm" data-id="1040000000307031">mvvm</a></li>
+                                                            <li class="tagPopup mb5"><a class="tag" href="https://segmentfault.com/t/reactivecocoa/blogs" data-toggle="popover" data-img="" data-placement="top" data-original-title="reactivecocoa" data-id="1040000000407345">reactivecocoa</a></li>
+                                                    </ul>
+
+                        <div class="article__author">
+                            <a href="https://segmentfault.com/u/ios122" class="mr5 "><strong>iOS122</strong></a>
+                            2015年10月19日发布
+                                                                                </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 hidden-xs">
+                    <ul class="post-topheader__side list-unstyled">
+                        <li>
+                                                                                                <button type="button" class="btn btn-success btn-sm" data-id="1190000003878904" id="sideLike">推荐
+                                    </button>
+                                                                                        <strong id="sideLiked">0</strong> 推荐
+                        </li>
+                        <li>
+                                                                                                <button type="button" id="sideBookmark" class="btn btn-default btn-sm" data-id="1190000003878904" data-type="article">收藏
+                                    </button>
+                                                                                        <strong id="sideBookmarked">11</strong> 收藏，<strong class="no-stress">3.1k</strong> 浏览
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- end .post-topheader -->
+
+    <div class="container mt30">
+        <div class="row">
+            <div class="col-xs-12 col-md-9 main ">
+
+                
+                <div class="article fmt article__content" data-id="1190000003878904" data-license="sa">
+                    
+<h2 id="articleHeader0">简介</h2>
+<ul>
+<li><p>项目主页: <a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank">ReactiveCocoa</a></p></li>
+<li><p>实例下载: <a href="https://github.com/ios122/ios122" target="_blank"></a><a href="https://github.com/ios122/ios122" target="_blank">https://github.com/ios122/ios122</a></p></li>
+<li><p>简评: 最受欢迎,最有价值的iOS响应式编程库,没有之一!iOS MVVM模式的完美搭档,更多关于MVVM与ReactiveCocoa的讨论,参考这篇文章: <a href="http://www.cocoachina.com/ios/20150526/11930.html" target="_blank">【长篇高能】ReactiveCocoa 和 MVVM 入门</a></p></li>
+<li><p>注意: ReactiveCocoa 最新3.0版本,使用Swift重写,最低支持iOS8.0,与国内大多数公司实际现状(一般要求最低兼容iOS7.0)不符;故此处选择兼容性版本更低的 2.5 版本来进行对译与解读.</p></li>
+</ul>
+<h2 id="articleHeader1">系统要求</h2>
+<ul><li><p>iOS 7.0 + (ReactiveCocoa 2.5 版本)</p></li></ul>
+<h2 id="articleHeader2">安装</h2>
+<p>推荐使用 CocoaPods 安装:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="platform :ios, '7.0'
+
+pod &quot;ReactiveCocoa&quot; # RAC,一个支持响应式编程的库." title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre><code class="ruby">platform <span class="hljs-symbol">:ios</span>, <span class="hljs-string">'7.0'</span>
+
+pod <span class="hljs-string">"ReactiveCocoa"</span> <span class="hljs-comment"># RAC,一个支持响应式编程的库.</span></code></pre>
+<h2 id="articleHeader3">入门</h2>
+<p>ReactiveCocoa 灵感来源于 <a href="http://blog.maybeapps.com/post/42894317939/input-and-output" target="_blank">函数响应式编程</a>. ReactiveCocoa通常简称为RAC.RAC中,不再使用变量,而是使用信号(以 <code>RACSignal </code>为代表)来捕捉现在和未来的数据或视图的值.</p>
+<p>通过对信号的链接,组合与响应, 软件就可以声明式的方式书写;这样就不再需要频繁地去监测和更新数据或视图的值了.</p>
+<p>RAC 主要特性之一就是提供了一种单一又统一的方式来处理各种异步操作--包括代理方法,block回调,target-action机制,通知和KVO等.</p>
+<p>这是一个简单的例子:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="// 当self.username变化时,在控制台打印新的名字.
+//
+// RACObserve(self, username) 创建一个新的 RACSignal 信号对象,它将会发送self.username当前的值,和以后 self.username 发生变化时 的所有新值.
+// -subscribeNext: 无论signal信号对象何时发送消息,此block回调都将会被执行.
+[RACObserve(self, username) subscribeNext:^(NSString *newName) {
+    NSLog(@&quot;%@&quot;, newName);
+}];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs haxe"><code class="objc"><span class="hljs-comment">// 当self.username变化时,在控制台打印新的名字.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// RACObserve(self, username) 创建一个新的 RACSignal 信号对象,它将会发送self.username当前的值,和以后 self.username 发生变化时 的所有新值.</span>
+<span class="hljs-comment">// -subscribeNext: 无论signal信号对象何时发送消息,此block回调都将会被执行.</span>
+[RACObserve(self, username) subscribeNext:<span class="hljs-type"></span>^(NSString *<span class="hljs-keyword">new</span><span class="hljs-type">Name</span>) {
+    NSLog(@<span class="hljs-string">"%@"</span>, <span class="hljs-keyword">new</span><span class="hljs-type">Name</span>);
+}];</code></pre>
+<p>但是和KVO不同的是, signals信号对象支持链式操作:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="// 只打印以&quot;j&quot;开头的名字.
+//
+// -filter: 当其bock方法返回YES时,才会返回一个新的RACSignal 信号对象;即如果其block方法返回NO,信号不再继续往下传播.
+
+[[RACObserve(self, username)
+    filter:^(NSString *newName) {
+        return [newName hasPrefix:@&quot;j&quot;];
+    }]
+    subscribeNext:^(NSString *newName) {
+        NSLog(@&quot;%@&quot;, newName);
+    }];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs haxe"><code class="objc"><span class="hljs-comment">// 只打印以"j"开头的名字.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// -filter: 当其bock方法返回YES时,才会返回一个新的RACSignal 信号对象;即如果其block方法返回NO,信号不再继续往下传播.</span>
+
+[[RACObserve(self, username)
+    filter:<span class="hljs-type"></span>^(NSString *<span class="hljs-keyword">new</span><span class="hljs-type">Name</span>) {
+        <span class="hljs-keyword">return</span> [<span class="hljs-keyword">new</span><span class="hljs-type">Name</span> hasPrefix:<span class="hljs-type"></span>@<span class="hljs-string">"j"</span>];
+    }]
+    subscribeNext:<span class="hljs-type"></span>^(NSString *<span class="hljs-keyword">new</span><span class="hljs-type">Name</span>) {
+        NSLog(@<span class="hljs-string">"%@"</span>, <span class="hljs-keyword">new</span><span class="hljs-type">Name</span>);
+    }];</code></pre>
+<p>Signals信号也可以用于派生属性(即那些由其他属性的值决定的属性,如Person可能有一个属性为 age年龄 和一个属性 
+isYong是否年轻,isYong 是由 age 
+属性的值推断而来,由age本身的值决定).不再需要来监测某个属性的值,然后来对应更新其他受此属性的新值影响的属性的值.RAC 
+可以支持以signales信号和操作的方式来表达派生属性.</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="// 创建一个单向绑定, self.password和self.passwordConfirmation 相等
+// 时,self.createEnabled 会自动变为true.
+//
+// RAC() 是一个宏,使绑定看起来更NICE.
+// 
+// +combineLatest:reduce:  使用一个 signals 信号的数组;
+// 在任意signal变化时,使用他们的最后一次的值来执行block;
+// 并返回一个新的 RACSignal信号对象来将block的值用作属性的新值来发送;
+// 简单说,类似于重写createEnabled 属性的 getter 方法.
+
+RAC(self, createEnabled) = [RACSignal 
+    combineLatest:@[ RACObserve(self, password), RACObserve(self, passwordConfirmation) ] 
+    reduce:^(NSString *password, NSString *passwordConfirm) {
+        return @([passwordConfirm isEqualToString:password]);
+    }];
+
+// 使用时,是不需要考虑属性是否是派生属性以及以何种方式绑定的:
+[RACObserve(self, createEnabled) subscribeNext: ^(NSNumber * enbable){
+    NSLog(@&quot;%@&quot;, enbable);
+}];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs objectivec"><code class="objc"><span class="hljs-comment">// 创建一个单向绑定, self.password和self.passwordConfirmation 相等</span>
+<span class="hljs-comment">// 时,self.createEnabled 会自动变为true.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// RAC() 是一个宏,使绑定看起来更NICE.</span>
+<span class="hljs-comment">// </span>
+<span class="hljs-comment">// +combineLatest:reduce:  使用一个 signals 信号的数组;</span>
+<span class="hljs-comment">// 在任意signal变化时,使用他们的最后一次的值来执行block;</span>
+<span class="hljs-comment">// 并返回一个新的 RACSignal信号对象来将block的值用作属性的新值来发送;</span>
+<span class="hljs-comment">// 简单说,类似于重写createEnabled 属性的 getter 方法.</span>
+
+RAC(<span class="hljs-keyword">self</span>, createEnabled) = [RACSignal 
+    combineLatest:@[ RACObserve(<span class="hljs-keyword">self</span>, password), RACObserve(<span class="hljs-keyword">self</span>, passwordConfirmation) ] 
+    reduce:^(<span class="hljs-built_in">NSString</span> *password, <span class="hljs-built_in">NSString</span> *passwordConfirm) {
+        <span class="hljs-keyword">return</span> @([passwordConfirm isEqualToString:password]);
+    }];
+
+<span class="hljs-comment">// 使用时,是不需要考虑属性是否是派生属性以及以何种方式绑定的:</span>
+[RACObserve(<span class="hljs-keyword">self</span>, createEnabled) subscribeNext: ^(<span class="hljs-built_in">NSNumber</span> * enbable){
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"%@"</span>, enbable);
+}];</code></pre>
+<p>Signals信号可以基于任何随时间变化的数据流创建,不仅仅是KVO.例如说,他们可以用来表示一个按钮的点击事件:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="// 任意时间点击按钮,都会打印一条消息. 
+//
+// RACCommand 创建代表UI事件的signals信号.例如,单个信号都可以代表一个按钮被点击,
+// 然后会有一些额外的操作与处理.
+//
+// -rac_command 是NSButton的一个扩展.按钮被点击时,会将会把自身发送给rac_command self.button.rac_command = [[RACCommand alloc] initWithSignalBlock:^(id _) {
+    NSLog(@&quot;button was pressed!&quot;);
+    return [RACSignal empty];
+}];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs kotlin"><code class="objc"><span class="hljs-comment">// 任意时间点击按钮,都会打印一条消息. </span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// RACCommand 创建代表UI事件的signals信号.例如,单个信号都可以代表一个按钮被点击,</span>
+<span class="hljs-comment">// 然后会有一些额外的操作与处理.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// -rac_command 是NSButton的一个扩展.按钮被点击时,会将会把自身发送给rac_command self.button.rac_command = [[RACCommand alloc] initWithSignalBlock:^(id _) {</span>
+    NSLog(@<span class="hljs-string">"button was pressed!"</span>);
+    <span class="hljs-keyword">return</span> [RACSignal empty];
+}];</code></pre>
+<p>或者异步网络请求:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="// 监听&quot;登陆&quot;按钮,并记录网络请求成功的消息.
+
+// 这个block会在来任意开始登陆步骤,执行登陆命令时调用.
+
+self.loginCommand = [[RACCommand alloc] initWithSignalBlock:^(id sender) {
+   // 这是一个假想中的 -logIn 方法, 返回一个 signal信号对象,这个对象在网络对象完成时发送 值.
+   // 可以使用 -filter 方法来保证当且仅当网络请求完成时,才返回一个 signal 对象.
+    return [client logIn];
+}];
+
+// -executionSignals 返回一个signal对象,这个signal对象就是每次执行命令时通过上面的block返回的那个signal对象.
+[self.loginCommand.executionSignals subscribeNext:^(RACSignal *loginSignal) {
+    // 打印信息,不论何时我们登陆成功.
+    [loginSignal subscribeCompleted:^{
+        NSLog(@&quot;Logged in successfully!&quot;);
+    }];
+}];
+
+// 当按钮被点击时,执行login命令.
+self.loginButton.rac_command = self.loginCommand;" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs objectivec"><code class="objc"><span class="hljs-comment">// 监听"登陆"按钮,并记录网络请求成功的消息.</span>
+
+<span class="hljs-comment">// 这个block会在来任意开始登陆步骤,执行登陆命令时调用.</span>
+
+<span class="hljs-keyword">self</span>.loginCommand = [[RACCommand alloc] initWithSignalBlock:^(<span class="hljs-keyword">id</span> sender) {
+   <span class="hljs-comment">// 这是一个假想中的 -logIn 方法, 返回一个 signal信号对象,这个对象在网络对象完成时发送 值.</span>
+   <span class="hljs-comment">// 可以使用 -filter 方法来保证当且仅当网络请求完成时,才返回一个 signal 对象.</span>
+    <span class="hljs-keyword">return</span> [client logIn];
+}];
+
+<span class="hljs-comment">// -executionSignals 返回一个signal对象,这个signal对象就是每次执行命令时通过上面的block返回的那个signal对象.</span>
+[<span class="hljs-keyword">self</span>.loginCommand.executionSignals subscribeNext:^(RACSignal *loginSignal) {
+    <span class="hljs-comment">// 打印信息,不论何时我们登陆成功.</span>
+    [loginSignal subscribeCompleted:^{
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Logged in successfully!"</span>);
+    }];
+}];
+
+<span class="hljs-comment">// 当按钮被点击时,执行login命令.</span>
+<span class="hljs-keyword">self</span>.loginButton.rac_command = <span class="hljs-keyword">self</span>.loginCommand;</code></pre>
+<p>Signals信号 也可以表示定时器,其他的UI事件,或者任何其他会随时间变化的东西.</p>
+<p>在异步操作上使用signals信号,让通过链接和转换这些signal信号,构建更加复杂的行为成为可能.可以在一组操作完成后,来触发此操作即可:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="// 执行两个网络操作,并在它们都完成后在控制台打印信息.
+//
+// +merge: 传入一组signal信号,并返回一个新的RACSignal信号对象.这个新返回的RACSignal信号对象,传递所有请求的值,并在所有的请求完成时完成.即:新返回的RACSignal信号,在每个请求完成时,都会发送个消息;在所有消息完成时,除了发送消息外,还会触发&quot;完成&quot;相关的block.
+//
+// -subscribeCompleted: signal信号完成时,将会执行block.
+[[RACSignal 
+    merge:@[ [client fetchUserRepos], [client fetchOrgRepos] ]] 
+    subscribeCompleted:^{
+        NSLog(@&quot;They're both done!&quot;);
+    }];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs prolog"><code class="objc">// 执行两个网络操作,并在它们都完成后在控制台打印信息.
+//
+// +merge: 传入一组signal信号,并返回一个新的<span class="hljs-symbol">RACSignal</span>信号对象.这个新返回的<span class="hljs-symbol">RACSignal</span>信号对象,传递所有请求的值,并在所有的请求完成时完成.即:新返回的<span class="hljs-symbol">RACSignal</span>信号,在每个请求完成时,都会发送个消息;在所有消息完成时,除了发送消息外,还会触发<span class="hljs-string">"完成"</span>相关的block.
+//
+// -subscribeCompleted: signal信号完成时,将会执行block.
+[[<span class="hljs-symbol">RACSignal</span> 
+    merge:@[ [client fetchUserRepos], [client fetchOrgRepos] ]] 
+    subscribeCompleted:^{
+        <span class="hljs-symbol">NSLog</span>(@<span class="hljs-string">"They're both done!"</span>);
+    }];</code></pre>
+<p>Signals 信号可以被链接以连续执行异步操作,而不再需要嵌套式的block调用.用法类似于:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="// 用户登录,然后加载缓存信息,然后从服务器获取剩余的消息.在这一切完成后,输入信息到控制台.
+//
+// 假想的 -logInUser 方法,在登录完成后,返回一个signal信号对象.
+//
+// -flattenMap: 无论任何时候,signal信号发送一个值,它的block都将被执行,然后返回一个新的RACSignal,这个新的RACSignal信号对象会merge合并所有此block返回的signals信号为一个RACSignal信号对象.
+[[[[client 
+    logInUser] 
+    flattenMap:^(User *user) {
+        // Return a signal that loads cached messages for the user.
+        return [client loadCachedMessagesForUser:user];
+    }]
+    flattenMap:^(NSArray *messages) {
+        // Return a signal that fetches any remaining messages.
+        return [client fetchMessagesAfterMessage:messages.lastObject];
+    }]
+    subscribeNext:^(NSArray *newMessages) {
+        NSLog(@&quot;New messages: %@&quot;, newMessages);
+    } completed:^{
+        NSLog(@&quot;Fetched all messages.&quot;);
+    }];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs less"><code class="objc"><span class="hljs-comment">// 用户登录,然后加载缓存信息,然后从服务器获取剩余的消息.在这一切完成后,输入信息到控制台.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// 假想的 -logInUser 方法,在登录完成后,返回一个signal信号对象.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// -flattenMap: 无论任何时候,signal信号发送一个值,它的block都将被执行,然后返回一个新的RACSignal,这个新的RACSignal信号对象会merge合并所有此block返回的signals信号为一个RACSignal信号对象.</span>
+<span class="hljs-selector-attr">[[[[client 
+    logInUser]</span> 
+    <span class="hljs-selector-tag">flattenMap</span>:^(User *user) {
+        <span class="hljs-comment">// Return a signal that loads cached messages for the user.</span>
+        <span class="hljs-selector-tag">return</span> <span class="hljs-selector-attr">[client loadCachedMessagesForUser:user]</span>;
+    }]
+    <span class="hljs-selector-tag">flattenMap</span>:^(NSArray *messages) {
+        <span class="hljs-comment">// Return a signal that fetches any remaining messages.</span>
+        <span class="hljs-selector-tag">return</span> <span class="hljs-selector-attr">[client fetchMessagesAfterMessage:messages.lastObject]</span>;
+    }]
+    <span class="hljs-selector-tag">subscribeNext</span>:^(NSArray *newMessages) {
+        <span class="hljs-selector-tag">NSLog</span>(@<span class="hljs-string">"New messages: %@"</span>, newMessages);
+    } <span class="hljs-selector-tag">completed</span>:^{
+        <span class="hljs-selector-tag">NSLog</span>(@<span class="hljs-string">"Fetched all messages."</span>);
+    }];</code></pre>
+<p>RAC 甚至让绑定异步操作的结果也更容易:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="// 创建一个单向的绑定,遮掩self.imagView.image就可以在用户的头像下载完成后自动被设置.
+//
+// 假定的 -fetchUserWithUsername: 方法返回一个发送用户对象的signal信号对象.
+//
+// -deliverOn: 创建一个新的 signals 信号对象,以在其他队列来处理他们的任务.
+// 在这个示例中,这个方法被用来将任务移到后台队列,并在稍后下载完成后返回主线程中.
+//
+// -map: 每个获取的用户都会传递进到这个block,然后返回新的RACSignal信号对象,这个
+// signal信号对象发送从这个block返回的值.
+RAC(self.imageView, image) = [[[[client 
+    fetchUserWithUsername:@&quot;joshaber&quot;]
+    deliverOn:[RACScheduler scheduler]]
+    map:^(User *user) {
+        // 下载头像(这在后台执行.)
+        return [UIImage imageWithData: [NSData dataWithContentsOfURL: user.avatarURL]];
+    }]
+    // 现在赋值在主线程完成. 
+    deliverOn:RACScheduler.mainThreadScheduler];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs dts"><code class="objc"><span class="hljs-comment">// 创建一个单向的绑定,遮掩self.imagView.image就可以在用户的头像下载完成后自动被设置.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// 假定的 -fetchUserWithUsername: 方法返回一个发送用户对象的signal信号对象.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// -deliverOn: 创建一个新的 signals 信号对象,以在其他队列来处理他们的任务.</span>
+<span class="hljs-comment">// 在这个示例中,这个方法被用来将任务移到后台队列,并在稍后下载完成后返回主线程中.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// -map: 每个获取的用户都会传递进到这个block,然后返回新的RACSignal信号对象,这个</span>
+<span class="hljs-comment">// signal信号对象发送从这个block返回的值.</span>
+RAC(self.imageView, image) = [[[[client 
+<span class="hljs-symbol">    fetchUserWithUsername:</span>@<span class="hljs-string">"joshaber"</span>]
+<span class="hljs-symbol">    deliverOn:</span>[RACScheduler scheduler]]
+<span class="hljs-symbol">    map:</span>^(User *user) {
+        <span class="hljs-comment">// 下载头像(这在后台执行.)</span>
+        return [UIImage imageWithData: [NSData dataWithContentsOfURL: user.avatarURL]];
+    }]
+    <span class="hljs-comment">// 现在赋值在主线程完成. </span>
+<span class="hljs-symbol">    deliverOn:</span>RACScheduler.mainThreadScheduler];</code></pre>
+<h2 id="articleHeader4">何时使用 ReactiveCocoa ?</h2>
+<p>ReactiveCocoa 非常抽象,初次接触,通常很难理解如何使用它来解决具体的问题.</p>
+<p>这是一些使用RAC更具有优势的应用场景:</p>
+<h3 id="articleHeader5">处理异步或事件驱动的数据源.</h3>
+<p>大多说Cocoa程序的重心在于响应用户事件或程序状态的变化上.处理这些情况的代码,很快就会变得很复杂,就像意大利面条那样,拥有许多的回调和状态变量来处理顺序问题.</p>
+<p>一些编程模式,表面上看有些相似,比如 UI回调方法,网络请求的响应和KVO通知等;实际上他们拥有许多的共同点. RACSignal 信号类,统一类这些不同的APIS,以便组合使用和操作它们.</p>
+<p>例如,如下代码:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="
+static void *ObservationContext = &amp;ObservationContext;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [LoginManager.sharedManager addObserver:self forKeyPath:@&quot;loggingIn&quot; options:NSKeyValueObservingOptionInitial context:&amp;ObservationContext];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(loggedOut:) name:UserDidLogOutNotification object:LoginManager.sharedManager];
+
+    [self.usernameTextField addTarget:self action:@selector(updateLogInButton) forControlEvents:UIControlEventEditingChanged];
+    [self.passwordTextField addTarget:self action:@selector(updateLogInButton) forControlEvents:UIControlEventEditingChanged];
+    [self.logInButton addTarget:self action:@selector(logInPressed:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)dealloc {
+    [LoginManager.sharedManager removeObserver:self forKeyPath:@&quot;loggingIn&quot; context:ObservationContext];
+    [NSNotificationCenter.defaultCenter removeObserver:self];
+}
+
+- (void)updateLogInButton {
+    BOOL textFieldsNonEmpty = self.usernameTextField.text.length &gt; 0 &amp;&amp; self.passwordTextField.text.length &gt; 0;
+    BOOL readyToLogIn = !LoginManager.sharedManager.isLoggingIn &amp;&amp; !self.loggedIn;
+    self.logInButton.enabled = textFieldsNonEmpty &amp;&amp; readyToLogIn;
+}
+
+- (IBAction)logInPressed:(UIButton *)sender {
+    [[LoginManager sharedManager]
+        logInWithUsername:self.usernameTextField.text
+        password:self.passwordTextField.text
+        success:^{
+            self.loggedIn = YES;
+        } failure:^(NSError *error) {
+            [self presentError:error];
+        }];
+}
+
+- (void)loggedOut:(NSNotification *)notification {
+    self.loggedIn = NO;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (context == ObservationContext) {
+        [self updateLogInButton];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs objectivec"><code class="objc">
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> *ObservationContext = &amp;ObservationContext;
+
+- (<span class="hljs-keyword">void</span>)viewDidLoad {
+    [<span class="hljs-keyword">super</span> viewDidLoad];
+
+    [LoginManager.sharedManager addObserver:<span class="hljs-keyword">self</span> forKeyPath:<span class="hljs-string">@"loggingIn"</span> options:<span class="hljs-built_in">NSKeyValueObservingOptionInitial</span> context:&amp;ObservationContext];
+    [<span class="hljs-built_in">NSNotificationCenter</span>.defaultCenter addObserver:<span class="hljs-keyword">self</span> selector:<span class="hljs-keyword">@selector</span>(loggedOut:) name:UserDidLogOutNotification object:LoginManager.sharedManager];
+
+    [<span class="hljs-keyword">self</span>.usernameTextField addTarget:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(updateLogInButton) forControlEvents:<span class="hljs-built_in">UIControlEventEditingChanged</span>];
+    [<span class="hljs-keyword">self</span>.passwordTextField addTarget:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(updateLogInButton) forControlEvents:<span class="hljs-built_in">UIControlEventEditingChanged</span>];
+    [<span class="hljs-keyword">self</span>.logInButton addTarget:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(logInPressed:) forControlEvents:<span class="hljs-built_in">UIControlEventTouchUpInside</span>];
+}
+
+- (<span class="hljs-keyword">void</span>)dealloc {
+    [LoginManager.sharedManager removeObserver:<span class="hljs-keyword">self</span> forKeyPath:<span class="hljs-string">@"loggingIn"</span> context:ObservationContext];
+    [<span class="hljs-built_in">NSNotificationCenter</span>.defaultCenter removeObserver:<span class="hljs-keyword">self</span>];
+}
+
+- (<span class="hljs-keyword">void</span>)updateLogInButton {
+    <span class="hljs-built_in">BOOL</span> textFieldsNonEmpty = <span class="hljs-keyword">self</span>.usernameTextField.text.length &gt; <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-keyword">self</span>.passwordTextField.text.length &gt; <span class="hljs-number">0</span>;
+    <span class="hljs-built_in">BOOL</span> readyToLogIn = !LoginManager.sharedManager.isLoggingIn &amp;&amp; !<span class="hljs-keyword">self</span>.loggedIn;
+    <span class="hljs-keyword">self</span>.logInButton.enabled = textFieldsNonEmpty &amp;&amp; readyToLogIn;
+}
+
+- (<span class="hljs-keyword">IBAction</span>)logInPressed:(<span class="hljs-built_in">UIButton</span> *)sender {
+    [[LoginManager sharedManager]
+        logInWithUsername:<span class="hljs-keyword">self</span>.usernameTextField.text
+        password:<span class="hljs-keyword">self</span>.passwordTextField.text
+        success:^{
+            <span class="hljs-keyword">self</span>.loggedIn = <span class="hljs-literal">YES</span>;
+        } failure:^(<span class="hljs-built_in">NSError</span> *error) {
+            [<span class="hljs-keyword">self</span> presentError:error];
+        }];
+}
+
+- (<span class="hljs-keyword">void</span>)loggedOut:(<span class="hljs-built_in">NSNotification</span> *)notification {
+    <span class="hljs-keyword">self</span>.loggedIn = <span class="hljs-literal">NO</span>;
+}
+
+- (<span class="hljs-keyword">void</span>)observeValueForKeyPath:(<span class="hljs-built_in">NSString</span> *)keyPath ofObject:(<span class="hljs-keyword">id</span>)object change:(<span class="hljs-built_in">NSDictionary</span> *)change context:(<span class="hljs-keyword">void</span> *)context {
+    <span class="hljs-keyword">if</span> (context == ObservationContext) {
+        [<span class="hljs-keyword">self</span> updateLogInButton];
+    } <span class="hljs-keyword">else</span> {
+        [<span class="hljs-keyword">super</span> observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}</code></pre>
+<p>…&nbsp;可以用RAC这样重写:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    @weakify(self);
+
+    RAC(self.logInButton, enabled) = [RACSignal
+        combineLatest:@[
+            self.usernameTextField.rac_textSignal,
+            self.passwordTextField.rac_textSignal,
+            RACObserve(LoginManager.sharedManager, loggingIn),
+            RACObserve(self, loggedIn)
+        ] reduce:^(NSString *username, NSString *password, NSNumber *loggingIn, NSNumber *loggedIn) {
+            return @(username.length &gt; 0 &amp;&amp; password.length &gt; 0 &amp;&amp; !loggingIn.boolValue &amp;&amp; !loggedIn.boolValue);
+        }];
+
+    [[self.logInButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *sender) {
+        @strongify(self);
+
+        RACSignal *loginSignal = [LoginManager.sharedManager
+            logInWithUsername:self.usernameTextField.text
+            password:self.passwordTextField.text];
+
+            [loginSignal subscribeError:^(NSError *error) {
+                @strongify(self);
+                [self presentError:error];
+            } completed:^{
+                @strongify(self);
+                self.loggedIn = YES;
+            }];
+    }];
+
+    RAC(self, loggedIn) = [[NSNotificationCenter.defaultCenter
+        rac_addObserverForName:UserDidLogOutNotification object:nil]
+        mapReplace:@NO];
+}" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs objectivec"><code class="objc">- (<span class="hljs-keyword">void</span>)viewDidLoad {
+    [<span class="hljs-keyword">super</span> viewDidLoad];
+
+    @weakify(<span class="hljs-keyword">self</span>);
+
+    RAC(<span class="hljs-keyword">self</span>.logInButton, enabled) = [RACSignal
+        combineLatest:@[
+            <span class="hljs-keyword">self</span>.usernameTextField.rac_textSignal,
+            <span class="hljs-keyword">self</span>.passwordTextField.rac_textSignal,
+            RACObserve(LoginManager.sharedManager, loggingIn),
+            RACObserve(<span class="hljs-keyword">self</span>, loggedIn)
+        ] reduce:^(<span class="hljs-built_in">NSString</span> *username, <span class="hljs-built_in">NSString</span> *password, <span class="hljs-built_in">NSNumber</span> *loggingIn, <span class="hljs-built_in">NSNumber</span> *loggedIn) {
+            <span class="hljs-keyword">return</span> @(username.length &gt; <span class="hljs-number">0</span> &amp;&amp; password.length &gt; <span class="hljs-number">0</span> &amp;&amp; !loggingIn.boolValue &amp;&amp; !loggedIn.boolValue);
+        }];
+
+    [[<span class="hljs-keyword">self</span>.logInButton rac_signalForControlEvents:<span class="hljs-built_in">UIControlEventTouchUpInside</span>] subscribeNext:^(<span class="hljs-built_in">UIButton</span> *sender) {
+        @strongify(<span class="hljs-keyword">self</span>);
+
+        RACSignal *loginSignal = [LoginManager.sharedManager
+            logInWithUsername:<span class="hljs-keyword">self</span>.usernameTextField.text
+            password:<span class="hljs-keyword">self</span>.passwordTextField.text];
+
+            [loginSignal subscribeError:^(<span class="hljs-built_in">NSError</span> *error) {
+                @strongify(<span class="hljs-keyword">self</span>);
+                [<span class="hljs-keyword">self</span> presentError:error];
+            } completed:^{
+                @strongify(<span class="hljs-keyword">self</span>);
+                <span class="hljs-keyword">self</span>.loggedIn = <span class="hljs-literal">YES</span>;
+            }];
+    }];
+
+    RAC(<span class="hljs-keyword">self</span>, loggedIn) = [[<span class="hljs-built_in">NSNotificationCenter</span>.defaultCenter
+        rac_addObserverForName:UserDidLogOutNotification object:<span class="hljs-literal">nil</span>]
+        mapReplace:@NO];
+}</code></pre>
+<h3 id="articleHeader6">链式依赖的操作.</h3>
+<p>依赖关系通常出现在网络请求中,如后一个请求应该等前一个请求完成后再创建,等等:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="[client logInWithSuccess:^{
+    [client loadCachedMessagesWithSuccess:^(NSArray *messages) {
+        [client fetchMessagesAfterMessage:messages.lastObject success:^(NSArray *nextMessages) {
+            NSLog(@&quot;Fetched all messages.&quot;);
+        } failure:^(NSError *error) {
+            [self presentError:error];
+        }];
+    } failure:^(NSError *error) {
+        [self presentError:error];
+    }];
+} failure:^(NSError *error) {
+    [self presentError:error];
+}];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs scheme"><code class="objc">[<span class="hljs-name">client</span> logInWithSuccess:^{
+    [<span class="hljs-name">client</span> loadCachedMessagesWithSuccess:^(<span class="hljs-name">NSArray</span> *messages) {
+        [<span class="hljs-name">client</span> fetchMessagesAfterMessage:messages.lastObject success:^(<span class="hljs-name">NSArray</span> *nextMessages) {
+            NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Fetched all messages."</span>)<span class="hljs-comment">;</span>
+        } failure:^(<span class="hljs-name">NSError</span> *error) {
+            [<span class="hljs-name">self</span> presentError:error]<span class="hljs-comment">;</span>
+        }]<span class="hljs-comment">;</span>
+    } failure:^(<span class="hljs-name">NSError</span> *error) {
+        [<span class="hljs-name">self</span> presentError:error]<span class="hljs-comment">;</span>
+    }]<span class="hljs-comment">;</span>
+} failure:^(<span class="hljs-name">NSError</span> *error) {
+    [<span class="hljs-name">self</span> presentError:error]<span class="hljs-comment">;</span>
+}]<span class="hljs-comment">;</span></code></pre>
+<p>ReactiveCocoa 可以特别方便地处理这种逻辑模式:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="[[[[client logIn]
+    then:^{
+        return [client loadCachedMessages];
+    }]
+    flattenMap:^(NSArray *messages) {
+        return [client fetchMessagesAfterMessage:messages.lastObject];
+    }]
+    subscribeError:^(NSError *error) {
+        [self presentError:error];
+    } completed:^{
+        NSLog(@&quot;Fetched all messages.&quot;);
+    }];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs scheme"><code class="objc">[[[[<span class="hljs-name">client</span> logIn]
+    then:^{
+        return [<span class="hljs-name">client</span> loadCachedMessages]<span class="hljs-comment">;</span>
+    }]
+    flattenMap:^(<span class="hljs-name">NSArray</span> *messages) {
+        return [<span class="hljs-name">client</span> fetchMessagesAfterMessage:messages.lastObject]<span class="hljs-comment">;</span>
+    }]
+    subscribeError:^(<span class="hljs-name">NSError</span> *error) {
+        [<span class="hljs-name">self</span> presentError:error]<span class="hljs-comment">;</span>
+    } completed:^{
+        NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Fetched all messages."</span>)<span class="hljs-comment">;</span>
+    }]<span class="hljs-comment">;</span></code></pre>
+<h3 id="articleHeader7">并行独立的工作.</h3>
+<p>使用独立数据的并行工作,然后最终将他们合并到一个结果中,在Cocoa中是很琐碎的,并且常常包含许多同步代码:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="__block NSArray *databaseObjects;
+__block NSArray *fileContents;
+ 
+NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
+NSBlockOperation *databaseOperation = [NSBlockOperation blockOperationWithBlock:^{
+    databaseObjects = [databaseClient fetchObjectsMatchingPredicate:predicate];
+}];
+
+NSBlockOperation *filesOperation = [NSBlockOperation blockOperationWithBlock:^{
+    NSMutableArray *filesInProgress = [NSMutableArray array];
+    for (NSString *path in files) {
+        [filesInProgress addObject:[NSData dataWithContentsOfFile:path]];
+    }
+
+    fileContents = [filesInProgress copy];
+}];
+ 
+NSBlockOperation *finishOperation = [NSBlockOperation blockOperationWithBlock:^{
+    [self finishProcessingDatabaseObjects:databaseObjects fileContents:fileContents];
+    NSLog(@&quot;Done processing&quot;);
+}];
+ 
+[finishOperation addDependency:databaseOperation];
+[finishOperation addDependency:filesOperation];
+[backgroundQueue addOperation:databaseOperation];
+[backgroundQueue addOperation:filesOperation];
+[backgroundQueue addOperation:finishOperation];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs mipsasm"><code class="objc">__block NSArray *databaseObjects<span class="hljs-comment">;</span>
+__block NSArray *fileContents<span class="hljs-comment">;</span>
+ 
+NSOperationQueue *<span class="hljs-keyword">backgroundQueue </span>= [[NSOperationQueue alloc] init]<span class="hljs-comment">;</span>
+NSBlockOperation *databaseOperation = [NSBlockOperation <span class="hljs-keyword">blockOperationWithBlock:^{
+</span>    databaseObjects = [databaseClient fetchObjectsMatchingPredicate:predicate]<span class="hljs-comment">;</span>
+}]<span class="hljs-comment">;</span>
+
+NSBlockOperation *filesOperation = [NSBlockOperation <span class="hljs-keyword">blockOperationWithBlock:^{
+</span>    NSMutableArray *filesInProgress = [NSMutableArray array]<span class="hljs-comment">;</span>
+    for (NSString *path in files) {
+        [filesInProgress <span class="hljs-keyword">addObject:[NSData </span>dataWithContentsOfFile:path]]<span class="hljs-comment">;</span>
+    }
+
+    fileContents = [filesInProgress copy]<span class="hljs-comment">;</span>
+}]<span class="hljs-comment">;</span>
+ 
+NSBlockOperation *finishOperation = [NSBlockOperation <span class="hljs-keyword">blockOperationWithBlock:^{
+</span>    [self finishProcessingDatabaseObjects:databaseObjects fileContents:fileContents]<span class="hljs-comment">;</span>
+    NSLog(@<span class="hljs-string">"Done processing"</span>)<span class="hljs-comment">;</span>
+}]<span class="hljs-comment">;</span>
+ 
+[finishOperation <span class="hljs-keyword">addDependency:databaseOperation];
+</span>[finishOperation <span class="hljs-keyword">addDependency:filesOperation];
+</span>[<span class="hljs-keyword">backgroundQueue </span><span class="hljs-keyword">addOperation:databaseOperation];
+</span>[<span class="hljs-keyword">backgroundQueue </span><span class="hljs-keyword">addOperation:filesOperation];
+</span>[<span class="hljs-keyword">backgroundQueue </span><span class="hljs-keyword">addOperation:finishOperation];</span></code></pre>
+<p>以上代码可以通过复合使用signals信号对象来优化:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="RACSignal *databaseSignal = [[databaseClient
+    fetchObjectsMatchingPredicate:predicate]
+    subscribeOn:[RACScheduler scheduler]];
+
+RACSignal *fileSignal = [RACSignal startEagerlyWithScheduler:[RACScheduler scheduler] block:^(id&lt;RACSubscriber&gt; subscriber) {
+    NSMutableArray *filesInProgress = [NSMutableArray array];
+    for (NSString *path in files) {
+        [filesInProgress addObject:[NSData dataWithContentsOfFile:path]];
+    }
+
+    [subscriber sendNext:[filesInProgress copy]];
+    [subscriber sendCompleted];
+}];
+
+[[RACSignal
+    combineLatest:@[ databaseSignal, fileSignal ]
+    reduce:^ id (NSArray *databaseObjects, NSArray *fileContents) {
+        [self finishProcessingDatabaseObjects:databaseObjects fileContents:fileContents];
+        return nil;
+    }]
+    subscribeCompleted:^{
+        NSLog(@&quot;Done processing&quot;);
+    }];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs mipsasm"><code class="objc">RACSignal *databaseSignal = [[databaseClient
+<span class="hljs-symbol">    fetchObjectsMatchingPredicate:</span>predicate]
+<span class="hljs-symbol">    subscribeOn:</span>[RACScheduler <span class="hljs-keyword">scheduler]];
+</span>
+RACSignal *fileSignal = [RACSignal startEagerlyWithScheduler:[RACScheduler <span class="hljs-keyword">scheduler] </span><span class="hljs-keyword">block:^(id&lt;RACSubscriber&gt; </span><span class="hljs-keyword">subscriber) </span>{
+    NSMutableArray *filesInProgress = [NSMutableArray array]<span class="hljs-comment">;</span>
+    for (NSString *path in files) {
+        [filesInProgress <span class="hljs-keyword">addObject:[NSData </span>dataWithContentsOfFile:path]]<span class="hljs-comment">;</span>
+    }
+
+    [<span class="hljs-keyword">subscriber </span>sendNext:[filesInProgress copy]]<span class="hljs-comment">;</span>
+    [<span class="hljs-keyword">subscriber </span>sendCompleted]<span class="hljs-comment">;</span>
+}]<span class="hljs-comment">;</span>
+
+[[RACSignal
+<span class="hljs-symbol">    combineLatest:</span>@[ databaseSignal, fileSignal ]
+<span class="hljs-symbol">    reduce:</span>^ id (NSArray *databaseObjects, NSArray *fileContents) {
+        [self finishProcessingDatabaseObjects:databaseObjects fileContents:fileContents]<span class="hljs-comment">;</span>
+        return nil<span class="hljs-comment">;</span>
+    }]
+<span class="hljs-symbol">    subscribeCompleted:</span>^{
+        NSLog(@<span class="hljs-string">"Done processing"</span>)<span class="hljs-comment">;</span>
+    }]<span class="hljs-comment">;</span></code></pre>
+<h3 id="articleHeader8">简化集合的转换.</h3>
+<p>更高层级的排序函数,比如 <code>map</code>(映射), <code>filter</code>(过滤器), <code>fold</code>(折叠)/<code>reduce</code>(减少),在Foundation 中严重缺失; 这导致必须编写类似于下面的循环代码:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="NSMutableArray *results = [NSMutableArray array];
+for (NSString *str in strings) {
+    if (str.length &lt; 2) {
+        continue;
+    }
+
+    NSString *newString = [str stringByAppendingString:@&quot;foobar&quot;];
+    [results addObject:newString];
+}" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs objectivec"><code class="objc"><span class="hljs-built_in">NSMutableArray</span> *results = [<span class="hljs-built_in">NSMutableArray</span> array];
+<span class="hljs-keyword">for</span> (<span class="hljs-built_in">NSString</span> *str <span class="hljs-keyword">in</span> strings) {
+    <span class="hljs-keyword">if</span> (str.length &lt; <span class="hljs-number">2</span>) {
+        <span class="hljs-keyword">continue</span>;
+    }
+
+    <span class="hljs-built_in">NSString</span> *newString = [str stringByAppendingString:<span class="hljs-string">@"foobar"</span>];
+    [results addObject:newString];
+}</code></pre>
+<p>RACSequence 允许任何Cocoa集合可以使用统一的声明式语法来操作:</p>
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="RACSequence *results = [[strings.rac_sequence
+    filter:^ BOOL (NSString *str) {
+        return str.length &gt;= 2;
+    }]
+    map:^(NSString *str) {
+        return [str stringByAppendingString:@&quot;foobar&quot;];
+    }];" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs processing"><code class="objc">RACSequence *results = [[strings.rac_sequence
+    <span class="hljs-built_in">filter</span>:^ BOOL (NSString *<span class="hljs-built_in">str</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">str</span>.length &gt;= <span class="hljs-number">2</span>;
+    }]
+    <span class="hljs-built_in">map</span>:^(NSString *<span class="hljs-built_in">str</span>) {
+        <span class="hljs-keyword">return</span> [<span class="hljs-built_in">str</span> stringByAppendingString:@<span class="hljs-string">"foobar"</span>];
+    }];</code></pre>
+
+                </div>
+                                                
+                <div class="clearfix mt10">
+
+                    <ul class="article-operation list-inline pull-left">
+                        <li><a href="https://segmentfault.com/a/1190000003878904" class="text-muted">2015年10月19日发布</a></li>
+                                                                                                                            <li class="dropdown js__content-ops" data-module="article" data-id="1190000003878904" data-typetext="文章">
+                                <a href="javascript:void(0);" class="dropdown-toggle text-muted" data-toggle="dropdown">更多<b class="caret"></b></a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                    <li><a href="#911" data-toggle="modal" data-target="#911" data-action="report">举报</a></li>
+                                                                            
+                                                                                                                        
+                                        
+                                                                    </ul>
+                            </li>
+                                            </ul>
+                </div>
+                <div class="mt10 text-center"><button type="button" id="mainLike" data-id="1190000003878904" class="btn btn-success btn-lg mr15 ">
+                                0 推荐
+                            </button><button type="button" id="mainBookmark" data-type="article" data-id="1190000003878904" class="btn btn-default btn-lg mr15 ">
+                                收藏
+                            </button></div>
+                                    <div class="recommend-post pt30 mt40 mb30 border-top">
+                        <div class="row">
+                            <div class="col-md-8">
+                                                                    <h4 class="mt0">你可能感兴趣的文章</h4>
+                                    <ul class="widget-links list-unstyled">
+                                                                                    <li class="widget-links__item">
+                                                <a href="https://segmentfault.com/a/1190000003894677" title="[干货分享]一篇可能会让你爱上MVVM与ReactiveCocoa的文章">[干货分享]一篇可能会让你爱上MVVM与ReactiveCocoa的文章</a>
+                                                <small class="text-muted">
+                                                    6 收藏，1.3k
+                                                    浏览
+                                                </small>
+                                            </li>
+                                                                                    <li class="widget-links__item">
+                                                <a href="https://segmentfault.com/a/1190000002733062" title="IOS 开发笔记2">IOS 开发笔记2</a>
+                                                <small class="text-muted">
+                                                    6 收藏，727
+                                                    浏览
+                                                </small>
+                                            </li>
+                                                                                    <li class="widget-links__item">
+                                                <a href="https://segmentfault.com/a/1190000004138859" title="iOS开发模式MVVM 2分离业务逻辑">iOS开发模式MVVM 2分离业务逻辑</a>
+                                                <small class="text-muted">
+                                                    12 收藏，1.3k
+                                                    浏览
+                                                </small>
+                                            </li>
+                                                                            </ul>
+                                                            </div>
+                            <div class="col-md-4">
+                                                                    <div class="article-license">
+                                                                                                                            <img class="mb5" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/creativecommons-sa.svg" height="24"><br>
+                                                                                <div class="license-item text-muted">
+                                            本作品采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" class="alert-link">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> 进行许可
+                                            。
+                                        </div>
+
+                                    </div>
+                                                            </div>
+                        </div>
+
+                    </div>
+                                <!-- <ul class="list-unstyled text-muted mt30">
+                                        <li>上一篇：<a href="/a/1190000003867894">写给iOS小白的MVVM教程(一): 从MVC到MVVM之一个典型的MVC应用场景</a></li>
+                                                            <li class="mt5">下一篇：<a href="/a/1190000003882034">Mantle--国外程序员最常用的iOS模型&amp;字典转换框架</a></li>
+                                    </ul> -->
+
+                <h2 class="h4 post-comment-title"></h2>
+                        <div class="comments--news comments--default" data-id="1190000003878904" data-user-id="" data-author-id="1030000003495331 " data-is-admin="null">
+        <div class="mb10">
+            <strong class="comments-stat pull-left mr10">评论</strong>
+            <div class="btn-group comments-sort">
+                <button type="button" class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown">
+                    <span class="comments-sort-text">默认排序</span> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="javascript:;" data-sort="default">默认排序</a></li>
+                    <li><a href="javascript:;" data-sort="asc">时间排序</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="comments-container">
+                                <div class="comments-list">
+            </div>
+    <div class="comments-loading hide">载入中...</div>
+    <div class="comments-more hide"><a href="javascript:;">显示更多评论</a></div>
+
+                        <div class="comments-box">
+                <div class="pull-left">
+                    <img class="avatar-32 " src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/user-128.png" alt="">
+                </div>
+                <div class="comments-box-content">
+                    <form action="/api/article/[id]/comments/add">
+                        <div class="form-group mb0">
+                                            <textarea name="text" rows="3" class="form-control" placeholder="文明社会，理性评论"></textarea>
+
+                            <div class="mt15 text-right">
+                                <button type="button" class="hide"></button>
+                                <button class=" btn btn-primary" type="button">发布评论</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+                    </div>
+    </div>
+
+
+
+
+
+
+                                    
+                
+            </div><!-- /.main -->
+
+
+            <div class="col-xs-12 col-md-3 side">
+                <div class="sfad-sidebar">
+      <div class="sfad-item">
+    <ins data-revive-zoneid="2" data-revive-block="1" data-revive-target="_blank" data-revive-ct0="1495638359" data-revive-id="0042ddc520dc895b7aa784fe6f9339bd"></ins>
+    <button class="close" type="button" aria-hidden="true">×</button>
+</div>
+
+  </div>
+
+
+                <div class="widget-box widget-box--blog-info">
+                    <div class="blog__sidebar-author ">
+                                                    <button type="button" class="btn btn-sm btn-success follow-user ml10 pull-right" data-do="follow" data-type="user" data-id="1030000003495331">关注作者
+                            </button>
+                        
+                        <div class="article__widget--author">
+                            <a href="https://segmentfault.com/u/ios122">
+                                <img class="avatar-40" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/1633086918-57c1f48e1347c_big64.png" alt="iOS122">
+                            </a>
+                            <a class="article__widget-author-name" href="https://segmentfault.com/u/ios122">
+                                <strong>iOS122</strong>
+                            </a>
+                            <p class="article__widget-author-text-muted mb0">
+                                <span>1.4k 声望</span>
+
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+                                        <div class="blog__sidebar-blog-name">
+                        <p class="article__widget-author-text-muted mt15 mb5">发布于专栏</p>
+
+                        <h4 class="fz16"><a href="https://segmentfault.com/blog/ios122">iOS122-移动混合开发研究院</a></h4>
+                        <p class="article__widget-author-desc">专注于ReactNative, Weex, APICloud等混合开发平台,深入对比研究混合开发的各种技术细节</p>
+
+                        <p>
+                            <span class="article__widget-author-text-muted">53 人关注</span>
+                            
+                                                                    <button type="button mb20" class="btn btn-sm btn-default follow-article pull-right" data-do="follow" data-type="blog" data-id="1200000003496842">关注专栏
+                                    </button>
+                                
+                                                    </p>
+
+                    </div>
+                    
+
+                </div>
+
+
+                
+                    <div data-type="widget" data-api="/api/bookmarkArchive/hots" data-api-overwrite="/api/bookmarkArchive/1190000003878904/related">
+        <script src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/hm.txt"></script><script async="" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/analytics.js"></script><script type="text/template">
+            <div class="widget-box widget-box--bookmark no-border">
+                <h4 class="widget-box__title">相关收藏夹 <a id="widgetBookmarkRefresh" class="userstab pull-right"
+                                                          href="javascript:;">换一组</a></h4>
+                <ul class="widget-links list-unstyled media">
+                    <% _.each(data,function(d){ %>
+                    <li class="widget-links__item">
+                        <img class="pull-left pattern pattern-<%= d.id%19 %> mr10" src="https://static.segmentfault.com/v-5924f5b0/global/img/pattern/<%= d.id%10 ? d.id%10 : 10 %>.svg" width="32">
+                        <div class="media-body">
+                            <a target="_blank" class="ellipsis mr0" href="<%- d.url %>"><%= d.name %></a>
+                            <p class="mb0">
+                                <span><%- d.num %></span> 个条目 <span class="division">|</span> <span><%- d.followers %></span> 人关注
+                            </p>
+                        </div>
+                    </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </script>
+    
+            <div class="widget-box widget-box--bookmark no-border">
+                <h4 class="widget-box__title">相关收藏夹 <a id="widgetBookmarkRefresh" class="userstab pull-right" href="javascript:;">换一组</a></h4>
+                <ul class="widget-links list-unstyled media">
+                    
+                    <li class="widget-links__item">
+                        <img class="pull-left pattern pattern-16 mr10" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/5.svg" width="32">
+                        <div class="media-body">
+                            <a target="_blank" class="ellipsis mr0" href="https://segmentfault.com/bookmark/1230000008025575">avalon.js</a>
+                            <p class="mb0">
+                                <span>9</span> 个条目 <span class="division">|</span> <span>0</span> 人关注
+                            </p>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-links__item">
+                        <img class="pull-left pattern pattern-12 mr10" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/5.svg" width="32">
+                        <div class="media-body">
+                            <a target="_blank" class="ellipsis mr0" href="https://segmentfault.com/bookmark/1230000004014975">vuejs</a>
+                            <p class="mb0">
+                                <span>7</span> 个条目 <span class="division">|</span> <span>2</span> 人关注
+                            </p>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-links__item">
+                        <img class="pull-left pattern pattern-11 mr10" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/2.svg" width="32">
+                        <div class="media-body">
+                            <a target="_blank" class="ellipsis mr0" href="https://segmentfault.com/bookmark/1230000005172682">js设计模式</a>
+                            <p class="mb0">
+                                <span>7</span> 个条目 <span class="division">|</span> <span>2</span> 人关注
+                            </p>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+
+                <div class="widget-share__full" data-text=" ReactiveCocoa,最受欢迎的iOS函数响应式编程库(2.5版),没有之一!  " data-url="https://segmentfault.com/a/1190000003878904" data-shorturl="http://sfau.lt/b5qre8"><div style="margin-bottom:10px;">分享扩散：</div><div class="widget-share-network sharer-0" style="display: block;"><ul class="sn-inline"><li data-network="weibo"><a href="javascript:void(0);" class="entypo-weibo icon-sn-weibo share-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至新浪微博">新浪微博</a></li><li data-network="wechart"><a href="javascript:void(0);" class="entypo-wechart icon-sn-weixin share-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至微信">微信</a></li><li data-network="twitter"><a href="javascript:void(0);" class="entypo-twitter icon-sn-twitter share-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至 Twitter">Twitter</a></li><li data-network="facebook"><a href="javascript:void(0);" class="entypo-facebook icon-sn-facebook share-4" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至 Facebook">Facebook</a></li></ul></div><a type="button" class="btn btn-sm shareMore btn-sn-more" data-toggle="popover" data-placement="top" data-url="https://segmentfault.com/a/1190000003878904" data-shorturl="http://sfau.lt/b5qre8"><span class="icon-sn-dotted" data-original-title="" title=""></span><strong class="visible-xs-inline">•••</strong></a></div>
+
+                <div class="post-nav hidden-xs side-outline hidden-sm" style="display: block;">
+                    <div class="panel panel-default widget-outline">
+                        <div class="panel-heading">文章目录</div>
+                        <div class="panel-body">
+                            <div class="nav-body" style="top: 0px;">
+                                <div class="highlight-title"></div>
+                                <ul class="articleIndex"><li><a href="#articleHeader0">简介</a></li><li><a href="#articleHeader1">系统要求</a></li><li><a href="#articleHeader2">安装</a></li><li><a href="#articleHeader3">入门</a></li><li><a href="#articleHeader4">何时使用 ReactiveCocoa ?</a></li><li style="list-style:none;"><ul><li><a href="#articleHeader5">处理异步或事件驱动的数据源.</a></li><li><a href="#articleHeader6">链式依赖的操作.</a></li><li><a href="#articleHeader7">并行独立的工作.</a></li><li><a href="#articleHeader8">简化集合的转换.</a></li></ul></li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.side -->
+        </div>
+    </div>
+</div>
+
+<div id="shareToWeiboModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">分享</h4>
+            </div>
+            <div class="modal-body">
+                <p class="sfModal-content">
+                    分享到微博？
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default dont-likeweibo" data-dismiss="modal">取消</button>
+                <a href="" id="shareLink" class="btn btn-primary done-btn" target="_blank" onclick="$('#shareToWeiboModal').modal('hide')">分享</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+<script type="text/template" id="regNext">
+        <div class="row flex-vertical-center">
+        <div class="col-md-12">
+            <p class="mb0" style="font-size: 14px; margin-right:50px; font-family: Source Code Pro,Consolas,Menlo,Monaco,Courier New,monospace;">
+                    为了理解递归，则必须首先理解递归。
+            </p>
+            <button class="btn btn-primary SFLogin mr10"
+                    onclick='ga("send", "event", "join button", "clicked", "footer welcome popup");'>投入组织怀抱
+            </button>
+            <button class="btn  btn-default  tomorrow"><img width="22" src="https://static.segmentfault.com/v-5924f5b0/global/img/emojis/mengbi.jpg"/></button>
+        </div>
+
+    </div>
+</script>
+
+<div class="hidden widget-register widget-welcome-question mt20 hidden-xs hidden-sm widget-welcome widget-register-slideUp">
+    <div class="container">
+        <div class="row flex-vertical-center">
+            <div class="col-sm-12 col-md-8">
+                <p class="mb0">
+                                                                技术专栏，帮你记录编程中的点滴，提升你对技术的理解<br>收藏感兴趣的文章，丰富自己的知识库
+                                    </p>
+
+            </div>
+            <div class="col-sm-12 col-lg-3 col-lg-offset-1 col-md-4">
+                <button class="btn btn-primary btn-lg SFLogin  mr10" onclick='ga("send", "event", "join button", "clicked", "footer welcome popup");'>立即注册
+                </button>
+                <button class="btn btn-lg btn-default  tomorrow">明天提醒我</button>
+            </div>
+            <div style="position: absolute;transform: scale(0.5,0.5) translate(300%,-60%);">
+                <img src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/welcome2x.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal widget-911" id="911" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true">×</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title"><span data-model="action"></span><span data-model="type"></span></h4>
+      </div>
+      <div class="modal-body">
+        <form id="reportForm">
+          <!-- 后台返回信息 -->
+          <p class="alert alert-warning" data-model="returnMsg"></p>
+          <div data-role="base">
+            <p>
+              <strong class="required">我要<span data-model="action"></span>该<span data-model="type"></span>，理由是：</strong>
+            </p>
+            <ul class="list-unstyled" data-model="list"></ul>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default pull-left" type="button" data-role="back" style="display:none">返回重选</button>
+                <button class="btn btn-default" data-dismiss="modal" type="button">取消</button>
+        <button class="btn btn-primary" data-role="submit" type="button">提交</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<footer id="footer">
+    <div class="container">
+        <div class="row hidden-xs">
+            <dl class="col-sm-2 site-link">
+                <dt>网站相关</dt>
+                <dd><a href="https://segmentfault.com/about">关于我们</a></dd>
+                <dd><a href="https://segmentfault.com/tos">服务条款</a></dd>
+                <dd><a href="https://segmentfault.com/faq">帮助中心</a></dd>
+                <dd><a href="https://segmentfault.com/repu">声望与权限</a></dd>
+                <dd><a href="https://segmentfault.com/markdown">编辑器语法</a></dd>
+                <dd><a href="https://weekly.segmentfault.com/">每周精选</a></dd>
+                <dd><a href="https://segmentfault.com/app">App 下载</a></dd>
+                <dd><a href="https://segmentfault.com/community">社区服务中心</a></dd>
+            </dl>
+            <dl class="col-sm-2 site-link">
+                <dt>联系合作</dt>
+                <dd><a href="https://segmentfault.com/contact">联系我们</a></dd>
+                <dd><a href="https://segmentfault.com/hiring">加入我们</a></dd>
+                <dd><a href="https://segmentfault.com/link">合作伙伴</a></dd>
+                <dd><a href="https://segmentfault.com/press">媒体报道</a></dd>
+                <dd><a href="https://board.segmentfault.com/">建议反馈</a></dd>
+                            </dl>
+            <dl class="col-sm-2 site-link">
+                <dt>常用链接</dt>
+                                                <dd><a href="https://chrome.google.com/webstore/detail/segmentfault-%E7%AC%94%E8%AE%B0/pjklfdmleagfaekibdccmhlhellefcfo" target="_blank">笔记插件: Chrome</a></dd>
+                                                                <dd><a href="https://addons.mozilla.org/zh-CN/firefox/addon/sf-note-ext/" target="_blank">笔记插件: Firefox</a></dd>
+                                                                <dd>订阅：<a href="https://segmentfault.com/feeds">问答</a> / <a href="https://segmentfault.com/feeds/blogs">文章</a></dd>
+                                                                <dd><a href="https://mirrors.segmentfault.com/" target="_blank">文档镜像</a></dd>
+                                                                <dd><a href="https://segmentfault.com/blog/interview" target="_blank">社区访谈</a></dd>
+                                                                <dd><a href="https://segmentfault.com/d-day" target="_blank">D-DAY 技术沙龙</a></dd>
+                                                                <dd><a href="https://segmentfault.com/hackathon" target="_blank">黑客马拉松 Hackathon</a></dd>
+                                                                <dd><a href="https://namebeta.com/" target="_blank">域名搜索注册</a></dd>
+                                                                <dd><a href="https://shop165859711.taobao.com/" target="_blank">周边店铺</a></dd>
+                                            </dl>
+            <dl class="col-sm-2 site-link">
+                <dt>关注我们</dt>
+                                <dd><a href="https://github.com/SegmentFault" target="_blank">Github</a></dd>
+                                <dd><a href="https://twitter.com/segment_fault" target="_blank">Twitter</a></dd>
+                                <dd><a href="http://weibo.com/segmentfault" target="_blank">新浪微博</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/segmentfault_team" target="_blank">团队日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/segmentfault" target="_blank">产品技术日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/community_admin" target="_blank">社区运营日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/segmentfault_news" target="_blank">市场运营日志</a></dd>
+                            </dl>
+            <dl class="col-sm-4 site-link" id="license">
+                <dt>内容许可</dt>
+                <dd>除特别说明外，用户内容均采用 <a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a> 进行许可
+                </dd>
+                <dd>本站由 <a target="_blank" href="https://www.upyun.com/?utm_source=segmentfault&amp;utm_medium=link&amp;utm_campaign=upyun&amp;md=segmentfault">又拍云</a> 提供 CDN 存储服务
+                </dd>
+            </dl>
+        </div>
+        <div class="copyright">
+            Copyright © 2011-2017 SegmentFault. 当前呈现版本 17.02.05<br>
+            <a href="http://www.miibeian.gov.cn/" rel="nofollow">浙ICP备 15005796号-2</a> &nbsp;
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602002000" rel="nofollow">浙公网安备 33010602002000号</a>
+        </div>
+        <p class="text-center">
+            <a class="js__view--selector hidden-sm hidden-md hidden-lg" data-action="mobile" href="javascript:;">移动版</a>
+            <a class="js__view--selector hidden-sm hidden-md hidden-lg" data-action="desktop" href="javascript:;">桌面版</a>
+        </p>
+    </div>
+</footer>
+
+<div id="fixedTools" class="hidden-xs hidden-sm">
+    <a id="backtop" class="hidden border-bottom" href="#">回顶部</a>
+
+    <div class="qrcodeWraper">
+        <a href="https://segmentfault.com/app#qrcode"><span class="glyphicon glyphicon-qrcode"></span></a>
+        <img id="qrcode" class="border" alt="sf-wechat" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/appQrcode.png">
+
+        <p class="qrcode-text">扫扫下载 App</p>
+    </div>
+</div>
+
+<script id="loginModal" type="text/template">
+    <div class="row bg-white login-modal">
+        <div class="col-md-4 col-sm-12 col-md-push-7 login-wrap">
+            <h1 class="h4 text-muted login-title">用户登录</h1>
+            <form action="/api/user/login" method="POST" role="form" class="mt30">
+                <div class="form-group">
+                    <label for="username" class="control-label">手机号 或 Email</label>
+                    <input type="text" class="form-control" name="username" required placeholder="11 位手机号 或 Email"
+                           autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">密码</label><span class="pull-right"><a
+                                href="/user/forgot">忘记密码</a></span>
+                    <input type="password" class="form-control" name="password" required placeholder="密码">
+                </div>
+                <div class="form-group clearfix">
+                    <div class="checkbox pull-left">
+                        <label><input name="remember" type="checkbox" value="1" checked> 记住登录状态</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right pl20 pr20"
+                            onclick='ga("send", "event", "email login button", "clicked", "login modal");'>登录
+                    </button>
+                </div>
+            </form>
+            <p class="h4 text-muted visible-xs-block h4">快速登录</p>
+            <div class="widget-login mt30">
+                <p class="text-muted mt5 mr10 pull-left hidden-xs">快速登录</p>
+                <a href="/user/oauth/google" class=""
+                   onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "google"});'><span
+                            class="icon-sn-google"></span> <strong class="visible-xs-inline">Google 账号</strong></a>
+                <a href="/user/oauth/github" class=""
+                   onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "github"});");'><span
+                            class="icon-sn-github"></span> <strong class="visible-xs-inline">Github 账号</strong></a>
+                <a href="/user/oauth/weibo" class=""
+                   onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "weibo"});'><span
+                            class="icon-sn-weibo"></span> <strong class="visible-xs-inline">新浪微博账号</strong></a>
+                <a href="/user/oauth/qq" class=""
+                   onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                            class="icon-sn-qq"></span> <strong class="visible-xs-inline">QQ 账号</strong></a>
+                <a href="/user/oauth/weixin" class=""
+                   onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                            class="icon-sn-weixin"></span> <strong class="visible-xs-inline">微信账号</strong></a>
+                <a href="/user/oauth/linkedin" class=""
+                   onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "linkedin"});'><span
+                            class="icon-sn-linkedin"></span> <strong class="visible-xs-inline">LinkedIn 账号</strong></a>
+                <span id="loginShowMore" style="cursor: pointer" class="mb5"><span class="icon-sn-dotted"></span><strong
+                            class="visible-xs-inline">•••</strong></span>
+                <a href="/user/oauth/twitter" class=" hidden"
+                   onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "twitter"});'><span
+                            class="icon-sn-twitter"></span> <strong class="visible-xs-inline">Twitter 账号</strong></a>
+                <a href="/user/oauth/facebook" class=" hidden"
+                   onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "facebook"});'><span
+                            class="icon-sn-facebook"></span> <strong class="visible-xs-inline">Facebook 账号</strong></a>
+                <a href="/user/oauth/douban" class=" hidden"
+                   onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "douban"});'><span
+                            class="icon-sn-douban"></span> <strong class="visible-xs-inline">豆瓣账号</strong></a>
+            </div>
+        </div>
+        <div class="login-vline hidden-xs hidden-sm"></div>
+        <div class="col-md-4 col-md-pull-3 col-sm-12 login-wrap">
+            <h1 class="h4 text-muted login-title">注册新账号</h1>
+            <form action="/api/user/phone/register" method="POST" role="form" class="mt30">
+                <div class="form-group">
+                    <label for="name" class="control-label">名字</label>
+                    <input type="text" class="form-control" name="name" required placeholder="真实姓名或常用昵称">
+                </div>
+
+
+                <div class="form-group js-register-switch-box">
+                    <div class="mb10">
+                        <label class="radio-inline">
+                            <input type="radio" name="register_type" value="phone" checked> 用手机号注册
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="register_type" value="mail"> 用 Email 注册
+                        </label>
+                    </div>
+                    <div class="js-register-switch-content">
+                        <input type="phone" class="form-control mb15" name="phone" required placeholder="仅支持大陆手机号"
+                               autocomplete="off">
+                        <div class="input-group"><input name="code" type="text"
+                                                        class="form-control js-user-login__phone-code-value"
+                                                        placeholder="短信验证码">
+                            <span class="input-group-btn"><button class="btn btn-default js-user-login__phone-vaild-btn"
+                                                                  style="width:96px;" type="button">获取验证码</button></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password" class="control-label">密码</label>
+                    <input type="password" class="form-control" name="password" required placeholder="不少于 6 位">
+                </div>
+                <div class="form-group" style="display:none;">
+                    <label class="required control-label">验证码</label>
+                    <input type="text" class="form-control" id="captcha" name="captcha" placeholder="请输入下方的验证码">
+                    <div class="mt10"><a id="loginReloadCaptcha" href="javascript:void(0)"><img
+                                    data-src="/user/captcha?w=240&h=50" class="captcha" width="240" height="50"/></a>
+                    </div>
+                </div>
+                <div class="form-group clearfix">
+                    <div class="checkbox pull-left">
+                        同意并接受<a href="/tos" target="_blank">《服务条款》</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary pl20 pr20 pull-right"
+                            onclick='ga("send", "event", "email register button", "clicked", "login modal");'>注册
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div style="position: absolute;transform: scale(0.5,0.5) translate(136%,-114%);">
+        <img src="https://static.segmentfault.com/v-5924f5b0/global/img/fool/login@2x.png">
+    </div>
+
+    <div class="text-center text-muted mt30">
+    </div>
+</script>
+<script id="bindPhoneModal" type="text/template">
+    <div class="row bg-white bindphone-model">
+        <div class="col-md-12">
+            <div class="alert alert-warning" role="alert">
+                为了保证账号安全，请先绑定手机
+            </div>
+            <div>
+                <form class="form-horizontal form__bindphone-apply" style="background-color:#fff;padding:0;">
+                    <div class="form-group ">
+                        <label for="phoneNumber" class="col-sm-3 control-label required" >手机号码</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control bindphone--phone" id="phoneNumber" name="phone" placeholder="仅只支持大陆手机号">
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="authCode" class="col-sm-3 control-label required">验证码</label>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control bindphone--code" name="code" placeholder="短信验证码">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default user-bind__phone-vaild-btn" type="button">获取验证码</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</script>
+
+
+
+<script>
+    (function (w) {
+        w.SF = {
+            staticUrl: "https://static.segmentfault.com/v-5924f5b0"
+        };
+        w.SF.token = (function () {
+    var _yIZk = //'gP'
+'2'+'460'//'sjC'
++//'Qs'
+'b2'+'2'//'7Ib'
++//'P'
+'23'+//'Gw'
+'f'+//'2'
+'c1f'+//'Fb8'
+'20'+/* 'DZ'//'DZ' */''+''///*'wV'*/'wV'
++//'sEg'
+'f'+//'Pb'
+'Pb'+'49'//'w'
++''///*'kw'*/'kw'
++'cyr'//'cyr'
++//'P'
+'1c5'+'5'//'V'
++//'5'
+'5'+'a'//'3Zg'
++//'C'
+'C'+'a4'//'7cd'
++/* 'z3L'//'z3L' */''+//'p'
+'2'+'a2a'//'sA'
++'D'//'D'
++'95'//'EOy'
++//'s8'
+'1', _ml2Wiv = [[16,18],[18,21],[22,23],[23,24],[29,30]];
+
+    for (var i = 0; i < _ml2Wiv.length; i ++) {
+        _yIZk = _yIZk.substring(0, _ml2Wiv[i][0]) + _yIZk.substring(_ml2Wiv[i][1]);
+    }
+
+    return _yIZk;
+})();;
+    })(window);
+
+                var lock = {
+        type: "",
+        text: '',
+        table: {"ban_post":[1,"\u4f60\u5df2\u7ecf\u88ab\u7981\u8a00, \u65e0\u6cd5\u8fdb\u884c\u6b64\u64cd\u4f5c, \u5982\u6709\u7591\u4e49\u8bf7\u63d0\u4ea4\u7533\u8bc9, \u6216\u8005\u53d1\u90ae\u4ef6\u5230pr@segmentfault.com"]}
+    };
+</script>
+    <script crossorigin="" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/assets.js"></script>
+    <script crossorigin="" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/post.js"></script>
+
+<script async="" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/asyncjs.js"></script>
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-918487-8']);
+    _gaq.push(['_trackPageview']);
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            
+        
+
+            
+
+    ga('create', 'UA-918487-8', 'auto', {
+        'userID'
+    : 0,
+        'createdTime'
+    : 0,
+        'now'
+    : 1495638359 });
+    ga('set', 'dimension1', 'guest');
+    ga('send', 'pageview');
+
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e23800c454aa573c0ccb16b52665ac26";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<iframe id="p_analyse_iframe" src="ReactiveCocoa,%E6%9C%80%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84iOS%E5%87%BD%E6%95%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%BA%93%282.5%E7%89%88%29,%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%21%20-%20iOS122-%E7%A7%BB%E5%8A%A8%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%A0%94%E7%A9%B6%E9%99%A2%20-%20SegmentFault_files/a.txt" style="display: none;"></iframe><div id="noteWidget" class="noteWidget hidden hidden-xs">
+    <div class="noteWidget-header clearfix">
+        <h2 class="h4 pull-left">记笔记</h2>
+        <ul class="list-inline pull-right mb0">
+            <li id="noteWidgetMinimize"><span class="icon-minimize"></span></li><li id="noteWidgetZoom"><span class="icon-zoom"></span></li><li id="noteWidgetClose"><span class="icon-close"></span></li>
+        </ul>
+    </div>
+    <form method="POST" action="/api/notes/add" role="form">
+        <div class="form-group">
+            <label for="title" class="sr-only">标题</label>
+            <input value="" id="draftId" type="hidden">
+            <input name="title" data-error="" autocomplete="off" class="form-control" placeholder="笔记描述" type="text">
+        </div>
+        <div class="editor-config clearfix">
+            <select name="lang" class="form-control pull-left input-sm">
+                <optgroup label="文本语法">
+                    <option value="text" data-mode="text" selected="selected">纯文本</option>
+                    <option value="markdown" data-mode="markdown">Markdown</option>
+                    <option value="javascript" data-mode="javascript">Javascript</option>
+                    <option value="css" data-mode="css">CSS</option>
+                    <option value="html5" data-mode="htmlmixed">HTML</option>
+                    <option value="php" data-mode="php">PHP</option>
+                    <option value="python" data-mode="python">Python</option>
+                    <option value="ruby" data-mode="ruby">Ruby</option>
+                    <option value="go" data-mode="go">Go</option>
+                    <option value="c" data-mode="clike">C/C++</option>
+                    <option value="java" data-mode="java">Java</option>
+                    <option value="bash" data-mode="shell">Shell/Bash</option>
+                </optgroup>
+            </select>
+            <div class="pull-right hidden-xs">
+                <select name="indentWithTabs" class="form-control inline-block input-sm">
+                    <optgroup label="缩进模式">
+                        <option value="false" selected="selected">空格缩进</option>
+                        <option value="true">Tabs 缩进</option>
+                    </optgroup>
+                </select>
+                <select name="tabSize" class="form-control inline-block input-sm">
+                    <optgroup label="缩进大小">
+                        <option value="2">2</option>
+                        <option value="4" selected="selected">4</option>
+                    </optgroup>
+                </select>
+                <select name="lineWrap" class="form-control inline-block input-sm">
+                    <optgroup label="换行方式">
+                        <option value="true" selected="selected">自动换行</option>
+                        <option value="false">不换行</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <textarea id="codeMirror" class="form-control" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none;" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" wrap="off"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="min-width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="true"><div class="CodeMirror-sizer" style="margin-left: 0px;"><div style="position: relative;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"></div><div class="CodeMirror-code"></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px;"></div><div class="CodeMirror-gutters"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 1px;"></div></div></div></div>
+        <div class="mt20 clearfix">
+            <div class="pull-right">
+                <span class="text-muted hidden" id="editorStatus">已保存</span>
+                <a id="dropIt" href="javascript:void(0);" class="mr10 hidden">[舍弃]</a>
+                <button data-type="note" id="publishIt2" class="btn btn-default ml10" data-id="" data-do="add" data-url="" data-text="保存私密笔记" data-name="">保存私密笔记</button>
+                <button data-type="note" id="publishIt" class="btn btn-primary ml10" data-id="" data-do="add" data-url="" data-text="保存公开笔记" data-name="">保存公开笔记</button>
+                </div>
+            </div>
+        </form></div>
+    
+<div id="atwho-container"><div id="atwho-ground-94a460191495638361858"><div class="atwho-view" id="at-view-64"><ul class="atwho-view-ul"></ul></div></div></div></body></html>

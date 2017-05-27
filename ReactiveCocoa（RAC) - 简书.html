@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 7]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if !IE]><!-->
+<html><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/nr-1026.js"></script><script src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/push.js"></script><script src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/hm.js"></script><script async="" src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1255494d3a","applicationID":"15702971","transactionName":"e1daR0JWVV9RER9ZWkxdRxxDUVZE","queueTime":0,"applicationTime":65,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="description" content="1.ReactiveCocoa简介 ReactiveCocoa(简称RAC),是由Github开源的一个应用于IOS和OS开发的新框架，Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。 2.ReactiveCocoa作用 在我们IOS开发中，经常会响应某些事件来处理某些业务逻辑，例如按钮的点击、上下拉刷新、网络请求、属性的变化（通过KVO）或者用户位置的变化（通过Cor...">
+  <meta property="wb:webmaster" content="294ec9de89e7fadb">
+  <meta property="qc:admins" content="104102651453316562112116375">
+  <meta property="qc:admins" content="11635613706305617">
+  <meta property="qc:admins" content="1163561616621163056375">
+  <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4">
+  <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI">
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://www.jianshu.com/p/74e621583a52">
+
+  <!-- Apple -->
+  <meta name="apple-mobile-web-app-title" content="简书">
+
+    <!--  Meta for Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=888237539, app-argument=jianshu://notes/5868268">
+  <!-- End -->
+
+  <!--  Meta for Twitter Card -->
+  <meta content="summary" property="twitter:card">
+  <meta content="@jianshucom" property="twitter:site">
+  <meta content="ReactiveCocoa（RAC)" property="twitter:title">
+  <meta content="1.ReactiveCocoa简介 ReactiveCocoa(简称RAC),是由Github开源的一个应用于IOS和OS开发的新框架，Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。 2.ReactiveCocoa作用 在我们IOS开发中，经常会响应某些事件来处理某些业务逻辑，例如按钮的点击、上下拉刷新、网络请求、属性的变化（通过KVO）或者用户位置的变化（通过CoreLocation）。但是这些事件都用不同的方式来处理，比如action、delegate、KVO、callback等。 其实这些事件，都可以通过RAC处理，ReactiveCocoa为事件提供了很多..." property="twitter:description">
+  <meta content="http://www.jianshu.com/p/74e621583a52" property="twitter:url">
+  <!-- End -->
+
+  <!--  Meta for OpenGraph -->
+  <meta property="fb:app_id" content="865829053512461">
+  <meta property="og:site_name" content="简书">
+  <meta property="og:title" content="ReactiveCocoa（RAC)">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.jianshu.com/p/74e621583a52">
+  <meta property="og:description" content="1.ReactiveCocoa简介 ReactiveCocoa(简称RAC),是由Github开源的一个应用于IOS和OS开发的新框架，Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Co...">
+  <!-- End -->
+
+  <!--  Meta for Facebook Applinks -->
+  <meta property="al:ios:url" content="jianshu://notes/5868268">
+  <meta property="al:ios:app_store_id" content="888237539">
+  <meta property="al:ios:app_name" content="简书">
+
+  <meta property="al:android:url" content="jianshu://notes/5868268">
+  <meta property="al:android:package" content="com.jianshu.haruki">
+  <meta property="al:android:app_name" content="简书">
+  <!-- End -->
+
+
+    <title>ReactiveCocoa（RAC) - 简书</title>
+
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Na/le8GYs8cav6qZSSmEQR05QuVq+FJb5TIOnmumKYIhwZ94QFkGuOcCUrhMf1eDYufagAXY5q/rggVLwWXYwg==">
+
+  <link rel="stylesheet" media="all" href="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/web-fad9919805cc73e375ad.css">
+  
+  <link rel="stylesheet" media="all" href="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/entry-fad9919805cc73e375ad.css">
+
+  <link href="http://cdn2.jianshu.io/assets/favicons/favicon-783beb88ed621ceab614de960376ac0c.ico" rel="icon">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/57-47624b2e2161e8eb144462c85db0a5ff.png" sizes="57x57">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/72-c00cde7cf98fc49e50cbb3ee1dcd5804.png" sizes="72x72">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/76-e8af0bdeaf1ba31e303b1fde8b5e66c4.png" sizes="76x76">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/114-f4c78569bbf1977e8382a5fd90c9237a.png" sizes="114x114">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/120-cf10c3711dba269522743729efe66bbc.png" sizes="120x120">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/152-7bd60457b5f3ecbf1343f0e6241be4f8.png" sizes="152x152">
+</head>
+
+  <body class="reader-black-font" lang="zh-CN">
+    <!-- 全局顶部导航栏 -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="width-limit">
+    <!-- 左上方 Logo -->
+    <a class="logo" href="http://www.jianshu.com/"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/logo-58fd04f6f0de908401aa561cda6a0688.png" alt="Logo"></a>
+
+    <!-- 右上角 -->
+      <!-- 未登录显示登录/注册/写文章 -->
+      <a class="btn write-btn" target="_blank" href="http://www.jianshu.com/writer#/">
+        <i class="iconfont ic-write"></i>写文章
+</a>      <a class="btn sign-up" href="http://www.jianshu.com/sign_up">注册</a>
+      <a class="btn log-in" href="http://www.jianshu.com/sign_in">登录</a>
+
+    <!-- 如果用户登录，显示下拉菜单 -->
+
+    <div class="style-mode"><a class="style-mode-btn"><i class="iconfont ic-navigation-mode"></i></a> <div class="popover-modal" style="left: 0px; display: none;"><div class="meta"><i class="iconfont ic-navigation-night"></i><span>夜间模式</span></div> <div class="switch day-night-group"><a class="switch-btn">开</a> <a class="switch-btn active">关</a></div> <hr> <div class="switch font-family-group"><a class="switch-btn font-song">宋体</a> <a class="switch-btn font-hei active">黑体</a></div> <div class="switch"><a class="switch-btn active">简</a> <a class="switch-btn">繁</a></div></div></div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav">
+            <li class="">
+              <a href="http://www.jianshu.com/">
+                <span class="menu-text">首页</span><i class="iconfont ic-navigation-discover menu-icon"></i>
+</a>            </li>
+            <li class="">
+              <a class="app-download-btn" href="http://www.jianshu.com/apps"><span class="menu-text">下载App</span><i class="iconfont ic-navigation-download menu-icon"></i></a>
+            </li>
+          <li class="search">
+            <form target="_blank" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+              <input name="q" id="q" placeholder="搜索" class="search-input" type="text">
+              <a class="search-btn" href="javascript:void(null)"><i class="iconfont ic-search"></i></a>
+              <!-- <div id="navbar-trending-search"></div> -->
+</form>          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+<div class="note">
+  <div class="post">
+    <div class="article">
+        <h1 class="title">ReactiveCocoa（RAC)</h1>
+
+        <!-- 作者区域 -->
+        <div class="author">
+          <a class="avatar" href="http://www.jianshu.com/u/f84e63998eef">
+            <img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/d7a868f2483c.jpg" alt="144">
+</a>          <div class="info">
+            <span class="tag">作者</span>
+            <span class="name"><a href="http://www.jianshu.com/u/f84e63998eef">雷晏</a></span>
+            <!-- 关注用户按钮 -->
+            <a class="btn btn-success follow"><i class="iconfont ic-follow"></i><span>关注</span></a>
+            <!-- 文章数据信息 -->
+            <div class="meta">
+              <!-- 如果文章更新时间大于发布时间，那么使用 tooltip 显示更新时间 -->
+                <span class="publish-time" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="最后编辑于 2016.09.20 17:33">2016.09.20 17:30*</span>
+              <span class="wordage">字数 3694</span>
+            <span class="views-count">阅读 251</span><span class="comments-count">评论 4</span><span class="likes-count">喜欢 14</span></div>
+          </div>
+          <!-- 如果是当前作者，加入编辑按钮 -->
+        </div>
+        <!-- -->
+
+        <!-- 文章内容 -->
+        <div class="show-content">
+          <h1>1.ReactiveCocoa简介</h1><p>ReactiveCocoa(简称RAC),是由Github开源的一个应用于IOS和OS开发的新框架，Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。</p><h1>2.ReactiveCocoa作用</h1><p>在
+我们IOS开发中，经常会响应某些事件来处理某些业务逻辑，例如按钮的点击、上下拉刷新、网络请求、属性的变化（通过KVO）或者用户位置的变化（通过
+CoreLocation）。但是这些事件都用不同的方式来处理，比如action、delegate、KVO、callback等。</p><p>其实这些事件，都可以通过RAC处理，ReactiveCocoa为事件提供了很多处理方法，而且利用RAC处理事件很方便，可以<b>把处理的事件和监听的事件的代码放在一起</b>，这样非常方便我们管理，就不需要跳到对应的方法里。非常符合我们开发中<b>高内聚、低耦合</b>的思想。</p><h1>3.编程思想</h1><p>在开发中我们也不能太依赖于某个框架，否则这个框架不更新了，导致项目后期没办法维护，比如之前Facebook提供的Three20框架，在当时也是神器，但后来不更新了，也就没什么人用了。因此我感觉学习一个框架，还是有必要了解它的编程思想。</p><p>先简单地介绍下目前我们已知的编程思想：</p><p><b>3.1、面向过程</b>：处理事物以过程为核心，一步一步地实现。</p><p><b>3.2、面向对象</b>：万物皆对象。</p><p><b>3.3、链式编程思想</b>：是将多个操作（多行代码）通过点语法链接在一起成为一句代码，是代码可读性好。</p><p> &nbsp; &nbsp; &nbsp; &nbsp;链式编程特点：方法的返回值是block，block必须有返回值（本身对象），block参数（需要操作的值）。</p><p> &nbsp; &nbsp; &nbsp; &nbsp;代表：masonry框架</p><p><b>3.4、响应式编程思想</b>：不用考虑调用顺序，只需考虑调用结果。类似于蝴蝶效应，产生一个事件，会影响很多东西，这些事件像流一样的传播出去，然后影响结果，借用面向对象的一句话，万物皆是流。</p><p> &nbsp; &nbsp; &nbsp; &nbsp;代表：KVO运用</p><p><b>3.5、函数式编程思想</b>：是把操作尽量写成一系列嵌套的函数或者方法调用。</p><p> &nbsp; &nbsp; &nbsp; &nbsp;函数式编程特点：每个方法必须有返回值（本身对象），把函数或者Block当做参数block（需要操作的值）block返回值（操作结果）</p><p> &nbsp; &nbsp; &nbsp; &nbsp;代表：ReactiveCocoa</p><h1>4.ReactiveCocoa编程思想</h1><p>ReactiveCocoa结合了几种编程风格：</p><p> &nbsp; &nbsp;函数式编程（Functional Programming）</p><p> &nbsp; &nbsp;响应式编程（Reactive Programming）</p><p>所以，你可能听说过ReactiveCocoa被描述为函数响应式（FRP）框架。</p><p>以后使用RAC解决问题，就不需要考虑调用顺序，直接考虑结果，把每一次操作都写成一系列嵌套的方法中，使代码高集合，方便管理。</p><h1>5.如何导入ReactiveCocoa框架</h1><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-fbf7a9145cf11652.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p>从上图这样导入RAC框架会发现，会报错的。</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-cf999a7d11c76cde.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p>解决办法：加上 'use_frameworks!'</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-77a1c11af17bc48a.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><h1>6.ReactiveCocoa常见类</h1><p>学习框架首要之处：个人认为先要搞清楚框架中常用的类，在RAC中最核心的类RACSignal，搞定这个类就能用ReactiveCocoa开发了。</p><p><b>RACSignal</b>：信号类，一般表示将来有数据传递，只要有数据改变，信号内部接收到数据，就会马上发出数据。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; 信号类（RACSignal），只是表示数据改变时，信号内部会发出数据，它本身不具备发送信号的能力，而是交给内部一个订阅者去发出。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; 默认一个信号都是冷信号，也就是值改变了，也不会触发，只有订阅了这个信号，这个信号才会变为热信号，值改变了才会触发。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; 如何订阅信号：调用信号RACSignal的subscribeNext就能订阅。</p><h4>
+<b>6.1.RACSignal的简单运用</b>：</h4><p> &nbsp; &nbsp; RACSignal使用步骤：</p><blockquote>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; 1.创建信号：+ (RACSignal *)createSignal:(RACDisposable * (^)(id subscriber))didSubscribe</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;2.发送信号：- (void)sendNext:(id)value (这步不一定有）</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;3.订阅信号，才能激活信号：- (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock</p>
+<p>RACSignal底层实现：</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;1.创建信号，首先把didSubscribe保存到信号中，还不会触发</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;2.当信号被订阅，也就是调用signal的subscribeNext:nextBlock</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;2.subscribeNext内部会创建订阅者subscriber，并把nextBlock保存到subscriber中</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;2.subscribeNext内部会调用signal的didSubscribe</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;3.signal的didSubscribe中调用[subscriber sendNext:@1];</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;3.1 sendNext底层其实就是执行了subscriber的nextBlock</p>
+</blockquote><p>我们来创建一个信号并发送</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-6f8895b4c356aef1.jpg" style="cursor: zoom-in;"><br><div class="image-caption">创建信号并发送</div>
+</div><p>我们运行程序可以发现，控制台并没有打印NSLog里的字符串，也印证了，创建的信号默认是个冷信号，需要我们手动去激活变成热信号，只有当信号被订阅了，才会调用。</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-1ddb05de37a49a84.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p>这里，我加上了订阅信号方法后，可以看到，控制台正常输出了想要的东西。 （注：信号内部发送数据，订阅方法就被调用；信号被订阅，信号内部就会被调用）</p><p> &nbsp;<b>RACSubscriber</b>：表示订阅者的意思，用于发送信号，这是一个协议，不是一个类，只要遵循这个协议，并且实现方法才能成为订阅者。通过create创建的信号，都有一个订阅者，帮助它发送数据。</p><p> &nbsp;<b>RACDisposable</b>：用于取消订阅者或者清理资源，当信号发送完毕或者发送错误的时候，就会自动释放它。一般使用的地方：不想监听某个信号时，可以通过它来主动取消订阅者号。</p><p> &nbsp; &nbsp; &nbsp;1.需要在信号被订阅的时候，返回一个RACDisposable，才能取消信号。</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-2321ab19c675c1d8.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p> &nbsp; &nbsp; &nbsp; 2.只要订阅信号，就会返回一个取消信号的对象，通过subscribeNext订阅，返回来RACDisposable对象，再通过dispose来主动取消信号</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-54f504f06db7220e.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><h4>6.2.RACSubject</h4><p> &nbsp; 信号提供者，自己可以充当信号，又能发送信号。rac中热信号的源头，继承于RACSignal</p><p> &nbsp; &nbsp;RACSubject的使用步骤：<br></p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.创建信号 [RACSubject subject]，跟RACSignal不一样，创建信号时没有block。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.订阅信号- (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.发送信号- (void)sendNext:(id)value</p><p> &nbsp; &nbsp; RACSubject底层实现和RACSignal不一样：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1.调用subscribeNext订阅信号，只是把订阅者保存起来，并且订阅者的nextBlock已经赋值。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2.调用sendNext发送信号，遍历刚刚保存的所有订阅者，一个一个调用订阅者的nextBlock</p><p> &nbsp; &nbsp; RACSubject的简单使用：</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-40aa8602b2c9153d.jpg" style="cursor: zoom-in;"><br><div class="image-caption">单个订阅</div>
+</div><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-236d88d238fd5397.jpg" style="cursor: zoom-in;"><br><div class="image-caption">多个订阅</div>
+</div><p>看log可以看出racsubject和racsignal有本质的区别，不关心历史值，错过就错过了，当发出第二个信号时，第一个订阅者收到的数据会相对于发生更新，所以不用去考虑历史值。<br></p><h4>6.3.RACReplaySubject</h4><p> &nbsp; &nbsp; 重复提供信号类，RACSubject的子类。</p><p> &nbsp; &nbsp; 使用场景：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1.如果一个信号每被订阅一次，就需要把之前的值重新发送一遍，使用重复提供信号类。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2.可以设置capcity数量来限制缓存的value的数量，即只缓存最新的几个值</p><p> &nbsp; &nbsp;RACReplaySubject的简单使用：<br></p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-38813145e6d5413e.jpg" style="cursor: zoom-in;"><br><div class="image-caption">只订阅1次</div>
+</div><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-1e12917b34bdfd0c.jpg" style="cursor: zoom-in;"><br><div class="image-caption">订阅2次</div>
+</div><p>可以看到log打印，把之前的值都重新发送了一遍。</p><h4>6.4.RACTuple和RACSequence</h4><p> &nbsp; &nbsp; &nbsp; RACTuple：元组类，类似NSArray，用来包装值</p><p> &nbsp; &nbsp; &nbsp; RACSequence：RAC中的集合类，用来代替NSArray、NSDictionary，可以使用它来快速遍历数组和字典。</p><p> &nbsp; &nbsp; &nbsp; 使用场景：字典转模型</p><p> &nbsp; &nbsp; &nbsp; RACSequence和RACTuple的简单使用<br></p><p> &nbsp; &nbsp; &nbsp; 主要有3个步骤 （numbers为数组）</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.把数组转化成集合RACSequence &nbsp; &nbsp;-&gt;numbers.rac_sequence<br></p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.把集合RACSequence转化成RACSignal信号类 &nbsp; &nbsp; &nbsp;-&gt;numbers.rac_sequence.signal</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.订阅信号，激活信号，会自动把集合中的所有值遍历出来 &nbsp;-&gt;subscribeNext</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-c38fbc4062970f3d.jpg" style="cursor: zoom-in;"><br><div class="image-caption">RACSequence</div>
+</div><p>从log打印可以看到，遍历字典，有个RACTuple对象。那么可以通过RACTuple来处理，方便接下来直接取出key-value</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-aaff67aedb96f5c3.jpg" style="cursor: zoom-in;"><br><div class="image-caption">RACTuple1</div>
+</div><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-818891765d734332.jpg" style="cursor: zoom-in;"><br><div class="image-caption">RACTuple宏</div>
+</div><p> &nbsp; &nbsp; &nbsp;<b>字典转模型</b></p><p><b> &nbsp; &nbsp;</b> &nbsp;通过map（映射）将数组遍历的集合映射成一个新值（模型）</p><p> &nbsp; &nbsp; &nbsp;步骤：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1. map：映射的意思，目的：把原始值value映射成一个新值</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.toArray：把集合转成数组</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 底层实现：当信号被订阅，会遍历集合中的原始值，映射成新值，并保存到数组中</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-48e16af0354874c6.jpg" style="cursor: zoom-in;"><br><div class="image-caption">字典转模型</div>
+</div><h4>6.5.RACCommand</h4><p> &nbsp; &nbsp; &nbsp;RAC中用于处理事件的类，可以把事件如何处理，事件中的数据如何传递，包装到这个类中，可以很方便的监控事件的执行过程。</p><p> &nbsp; &nbsp; &nbsp;使用场景：监听按钮点击，网络请求</p><p> &nbsp; &nbsp; &nbsp;使用步骤：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.创建命令- (id)initWithSignalBlock:(RACSignal * (^)(InputType input))signalBlock;</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.在signalBlock中，创建RACSignal，并作为signalBlock的返回值。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.执行命令- (RACSignal *)execute:(InputType)input;</p><p> &nbsp; &nbsp; &nbsp; 注意事项：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1.signalBlock必须返回一个信号，不能传nil</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2.如果不想传递信号，直接创建空的信号[RACSignal empty] </p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3.RACCommand中信号如果数据传递完，调用[subscriber sendCompeted]来保证发送信号完毕，不会有更多的信号发送。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4.RACCommand需要被强引用，否则接受不到RACCommand中的信号，因此RACCommand的信号是延迟发送的。</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-b9ed131c270b52db.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p>从上图，可以看出，创建命令返回的是一个信号RACSignal，我们也知道信号可以发信号，所以，就有executionSignals信号源的概念</p><p><b>executionSignals </b>信号源，包含事件处理的所有的信号<br></p><p>定义：信号中发信号，也就是信号发出的数据也是信号。</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-71d17c8fbe590bab.jpg" style="cursor: zoom-in;"><br><div class="image-caption">信号发送信号</div>
+</div><p>明白了信号发送信号的原理后，我们来看看executionSignals信号源如何去操作的。需要注意的是想要信号源接收到信号内容，需要将命令类强引用保持，保证命令类不被销毁。（在这里我就设置成全局）</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-bd1689723f3cd744.jpg" style="cursor: zoom-in;"><br><div class="image-caption">RACCommand-&gt;RACSignals</div>
+</div><h4>6.6.RACMulticastConnection</h4><p> &nbsp; &nbsp; &nbsp; &nbsp;用于当一个信号，被多次订阅时，为了保证创建信号时，避免多次调用创建信号中的block，造成副作用，可以使用这个类处理。</p><p> &nbsp; &nbsp; &nbsp; &nbsp;使用注意：RACMulticastConnection通过RACSignal的-publish或者-muticast:方法创建</p><p> &nbsp; &nbsp; &nbsp; &nbsp;使用步骤：</p><p>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.创建信号+ (RACSignal 
+*)createSignal:(RACDisposable * (^)(idsubscriber))didSubscribe;</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.创建连接RACMulticastConnection *connect = [signal publish];</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.订阅信号，注意：订阅的信号不是之前的信号，而是连接的信号[connection.signal subscribeNext:nextBlock]</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.连接 [connect connect];</p><p> &nbsp; &nbsp; &nbsp; &nbsp;底层原理：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.创建connect，通过publish(multicast:)创建sourceSignal(指向原信号），connect.signal -&gt;RACSubject</p><p>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+2.订阅connect，会调用RACSubject的subscribeNext，创建订阅者，并把订阅者保存起来，并不会去去执行，也就是说现在的
+connect.signal信号是冷信号。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.[connect connect]内部会订阅RACSignal（原始信号），并且订阅者就是RACSubject，调用了此方法才能将信号变成热信号。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.订阅原始信号，就会调用didSubscribe</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.didSubscribe后，拿到订阅者调用sendNext，其实就是调用RACSubjec的sendNext</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.sendNext后，就会遍历所有订阅者发送信号</p><p> &nbsp; &nbsp; &nbsp; &nbsp;使用场景：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 如果一个信号发出请求，每次订阅一次都会发出请求，这样导致多次请求，就可以利用RACMulticastConnection来解决</p><p> &nbsp; &nbsp; &nbsp; &nbsp;简单使用：</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-ef5dc2a83782d1fd.jpg" style="cursor: zoom-in;"><br><div class="image-caption">单独的订阅信号</div>
+</div><p>如果不使用连接，可以发现，每次去订阅一次信号，就会去重复调NSLog()，这个也就是副作用。</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-70c6ae4271f1e6f5.jpg" style="cursor: zoom-in;"><br><div class="image-caption">加上连接Signal</div>
+</div><p>可以看到，就不会去重复请求了。</p><h1>7.ReactiveCocoa开发中常见用法</h1><p> &nbsp; &nbsp; 1.代替代理：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ran_signalForSelector：用于代替代理</p><p> &nbsp; &nbsp; &nbsp;场景：在控制器设置一个view，view里放个按钮button，然后点击button，让控制器知道按钮被点了。</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-5e5862e0149e115b.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p> &nbsp; &nbsp; 拓展：RACDelegateProxy 代理类</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;这个类通常用在多个对象，但各种在代理方法中处理的事件不同，或者说实现不同的需求（注：RACDelegateProxy可能会被无缘无故地crash，所以需要强引用保留住）<br></p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-d819905d5d7bbfee.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p>订阅信号返回block参数x就是当前操作的textField。这样写代理，符合了高内聚的思想，不必去到处找代理方法位置。</p><p> &nbsp; &nbsp; 2.代替KVO：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; rac_valuesAndChangesForKeyPath：用于监听某个对象的属性改变</p><p> &nbsp; &nbsp; &nbsp; &nbsp;场景：点击屏幕，年龄age++，来监听age变化值</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-ab6d85cf69acb4c4.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p> &nbsp; &nbsp; 3.监听事件：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; rac_signalForControlEvents：用于监听某个事件</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-95d2707e22488bde.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p> &nbsp; &nbsp; 4.代替通知：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;rac_addObserverForName：用于监听某个通知</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;场景：监听键盘弹出</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-7c1520356d14ad4f.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p> &nbsp; &nbsp; 5.监听文本框文字改变：</p><p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; rac_textSignal：只要文本框发出改变就会发出这个信号</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-2c847bfe56129dc7.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p> &nbsp; &nbsp; 6.处理当界面有多次请求时，需要都获取到数据时，才能显示界面：</p><p> &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp;rac_liftSelector:withSignalsFromArray:Signals：当传入的Signals(信号数组)，每一
+个signal(都至少sendNext过一次，就会去触发第一个selector参数的方法)。</p><p> &nbsp; &nbsp; &nbsp; &nbsp; 场景：一个页面里，有2个不同的请求（分别是热门商品的请求和最新商品的请求），只有当2个请求都请求完毕后才更新界面。</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-3e8f9bee04ccbe50.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p>我们将最新商品发送信号方法senNext注释掉，会发现就不会去调更新UI方法了。</p><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-ad32bc9ddbea1caf.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><h1>8.ReactiveCocoa常见的宏</h1><div class="image-package">
+<img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/2363289-3483ff243f2b6300.jpg" style="cursor: zoom-in;"><br><div class="image-caption"></div>
+</div><p><br></p><h1>总结：</h1><p> &nbsp; 
+&nbsp;ReactiveCocoa框架是个重量级框架，学习起来确实比较费时间，学习一个框架，要去了解框架编程思想，比如Masonry框架，采
+取的是链式编程，ReactiveCocoa框架，采取的是函数响应式编程。框架固然方便了程序员，但不能太过于去依赖，如果有一天框架没更新了，写的代
+码就真的炸了，为此，我不推荐项目迭代时间较久的去使用第三方框架。</p>
+        </div>
+        <!--  -->
+
+        <div class="show-foot">
+          <a class="notebook" href="http://www.jianshu.com/nb/6362714">
+            <i class="iconfont ic-search-notebook"></i> <span>大神修炼手册</span>
+</a>          <div class="copyright" data-toggle="tooltip" data-html="true" data-original-title="转载请联系作者获得授权，并标注“简书作者”。">
+            © 著作权归作者所有
+          </div>
+          <div class="modal-wrap" data-report-note="">
+            <a id="report-modal">举报文章</a>
+          </div>
+        </div>
+    </div>
+
+    <!-- 文章底部作者信息 -->
+      <div class="follow-detail">
+        <div class="info">
+          <a class="avatar" href="http://www.jianshu.com/u/f84e63998eef">
+            <img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/d7a868f2483c.jpg" alt="144">
+</a>          <a class="btn btn-success follow"><i class="iconfont ic-follow"></i><span>关注</span></a>
+          <a class="title" href="http://www.jianshu.com/u/f84e63998eef">雷晏</a>
+        <p>写了 15294 字，被 93 人关注，获得了 157 个喜欢</p></div>
+          <div class="signature">
+            <span>极客精神，做一名极客男神</span>
+          </div>
+      </div>
+
+      <div class="support-author"><p>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</p> <div class="btn btn-pay">赞赏支持</div> <!----> <!----> <!----></div>
+
+    <div class="meta-bottom">
+      <div class="like"><div class="btn like-group"><div class="btn-like"><a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-like"></i>喜欢</a></div> <div class="modal-wrap"><a>14</a></div></div> <!----></div>
+      <div class="share-group">
+        <a class="share-circle" data-action="weixin-share" data-toggle="tooltip" data-original-title="分享到微信">
+          <i class="iconfont ic-wechat"></i>
+        </a>
+        <a class="share-circle" data-toggle="tooltip" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=1881139527',u=z||d.location,p=['&amp;url=',e(u),'&amp;title=',e(t||d.title),'&amp;source=',e(r),'&amp;sourceUrl=',e(l),'&amp;content=',c||'gb2312','&amp;pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','http://cwb.assets.jianshu.io/notes/images/5868268/weibo/image_54122e38a237.jpg',%20'%E6%8E%A8%E8%8D%90%20%E9%9B%B7%E6%99%8F%20%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%8AReactiveCocoa%EF%BC%88RAC)%E3%80%8B%EF%BC%88%20%E5%88%86%E4%BA%AB%E8%87%AA%20@%E7%AE%80%E4%B9%A6%20%EF%BC%89','http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weibo','%E9%A1%B5%E9%9D%A2%E7%BC%96%E7%A0%81gb2312|utf-8%E9%BB%98%E8%AE%A4gb2312'));" data-original-title="分享到微博">
+          <i class="iconfont ic-weibo"></i>
+        </a>
+          <a class="share-circle" data-toggle="tooltip" href="http://cwb.assets.jianshu.io/notes/images/5868268/weibo/image_54122e38a237.jpg" target="_blank" data-original-title="下载长微博图片">
+            <i class="iconfont ic-picture"></i>
+          </a>
+        <a class="share-circle more-share" tabindex="0" data-toggle="popover" data-placement="top" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content="
+          &lt;ul class=&quot;share-list&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+e('http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qzone')+'&amp;title='+e('推荐 雷晏 的文章《ReactiveCocoa（RAC)》'),x=function(){if(!window.open(r,'qzone','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-zone&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到QQ空间&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://twitter.com/share?url='+e('http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=twitter')+'&amp;text='+e('推荐 雷晏 的文章《ReactiveCocoa（RAC)》（ 分享自 @jianshucom ）')+'&amp;related='+e('jianshucom'),x=function(){if(!window.open(r,'twitter','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-twitter&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=facebook',x=function(){if(!window.open(r,'facebook','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-facebook&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://plus.google.com/share?url='+e('http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=google_plus'),x=function(){if(!window.open(r,'google_plus','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-google&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Google+&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e('http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=douban')+'&amp;title='+e('ReactiveCocoa（RAC)')+'&amp;sel='+e(s)+'&amp;v=1',x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&amp;r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-douban&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到豆瓣&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        " data-original-title="" title="">更多分享</a>
+      </div>
+    </div>
+    <div><div id="comment-list" class="comment-list"><div><form class="new-comment"><a class="avatar"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/avatar_default-78d4d1f68984cd6d4379508dd94b4210.png"></a> <div class="sign-container"><a href="http://www.jianshu.com/sign_in" class="btn btn-sign">登录</a> <span>后发表评论</span></div></form></div> <div id="normal-comment-list" class="normal-comment-list"><div><div><div class="top"><span>4条评论</span> <a class="author-only">只看作者</a> <a class="close-btn" style="display: none;">关闭评论</a> <div class="pull-right"><a class="active">按喜欢排序</a><a class="">按时间正序</a><a class="">按时间倒序</a></div></div></div> <!----> <!----> <div class="comments-placeholder" style="display: none;"><div class="author"><div class="avatar"></div> <div class="info"><div class="name"></div> <div class="meta"></div></div></div> <div class="text"></div> <div class="text animation-delay"></div> <div class="tool-group"><i class="iconfont ic-zan-active"></i><div class="zan"></div> <i class="iconfont ic-list-comments"></i><div class="zan"></div></div></div> <div id="comment-4304989" class="comment"><div><div class="author"><a href="http://www.jianshu.com/u/5ef647c7899c" target="_blank" class="avatar"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/12-aeeea4bedf10f2a12c0d50d626951489.jpg"></a> <div class="info"><a href="http://www.jianshu.com/u/5ef647c7899c" target="_blank" class="name">OneStepAway</a> <!----> <div class="meta"><span>2楼 · 2016.09.20 17:33</span></div></div></div> <div class="comment-wrap"><p>看都没看 先点赞 <img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/wink.png" alt=":wink:" title=":wink:" class="emoji" width="20" height="20"> </p> <div class="tool-group"><a><i class="iconfont ic-zan"></i> <span>1人赞</span></a> <a><i class="iconfont ic-comment"></i> <span>回复</span></a> <!----> <!----></div></div></div> <div class="sub-comment-list"><div id="comment-4305081" class="sub-comment"><p><a href="http://www.jianshu.com/u/f84e63998eef" target="_blank">雷晏</a>：
+          <span><a href="http://www.jianshu.com/users/5ef647c7899c" class="maleskine-author" target="_blank" data-user-slug="5ef647c7899c">@OneStepAway</a> <img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/smiley.png" alt=":smiley:" title=":smiley:" class="emoji" width="20" height="20"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/smiley.png" alt=":smiley:" title=":smiley:" class="emoji" width="20" height="20"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/smiley.png" alt=":smiley:" title=":smiley:" class="emoji" width="20" height="20"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/joy.png" alt=":joy:" title=":joy:" class="emoji" width="20" height="20"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/joy.png" alt=":joy:" title=":joy:" class="emoji" width="20" height="20"></span></p> <div class="sub-tool-group"><span>2016.09.20 17:39</span> <a><i class="iconfont ic-comment"></i> <span>回复</span></a> <!----> <!----></div></div> <div class="sub-comment more-comment"><a class="add-comment-btn"><i class="iconfont ic-subcomment"></i> <span>添加新评论</span></a> <!----> <!----> <!----></div> <!----></div></div><div id="comment-4312526" class="comment"><div><div class="author"><a href="http://www.jianshu.com/u/cfa214d17e4d" target="_blank" class="avatar"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/dbd13911f829.jpg"></a> <div class="info"><a href="http://www.jianshu.com/u/cfa214d17e4d" target="_blank" class="name">失落的沙洲</a> <!----> <div class="meta"><span>3楼 · 2016.09.20 23:27</span></div></div></div> <div class="comment-wrap"><p>😔😔😔😔😔😔😔😔😔</p> <div class="tool-group"><a><i class="iconfont ic-zan"></i> <span>赞</span></a> <a><i class="iconfont ic-comment"></i> <span>回复</span></a> <!----> <!----></div></div></div> <div class="sub-comment-list hide"><!----> <!----></div></div><div id="comment-4847552" class="comment"><div><div class="author"><a href="http://www.jianshu.com/u/8e1461b3ff3f" target="_blank" class="avatar"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/7ab5c521e88a.jpg"></a> <div class="info"><a href="http://www.jianshu.com/u/8e1461b3ff3f" target="_blank" class="name">聂飞缘</a> <!----> <div class="meta"><span>4楼 · 2016.10.15 15:18</span></div></div></div> <div class="comment-wrap"><p>哈哈，先点赞以后再看</p> <div class="tool-group"><a><i class="iconfont ic-zan"></i> <span>赞</span></a> <a><i class="iconfont ic-comment"></i> <span>回复</span></a> <!----> <!----></div></div></div> <div class="sub-comment-list hide"><!----> <!----></div></div></div></div> <!----> <!----></div></div>
+  </div>
+
+  <div class="side-tool"><ul><li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="回到顶部" style="display: none;"><a href="#" class="function-button"><i class="iconfont ic-backtop"></i></a></li> <!----> <!----> <li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="分享文章"><a tabindex="0" role="button" data-toggle="popover" data-placement="left" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content="&lt;ul class='share-list'&gt;
+                &lt;li&gt;&lt;a class=&quot;weixin-share&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-weixin&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到微信&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=1881139527',u=z||d.location,p=['&amp;url=',e(u),'&amp;title=',e(t||d.title),'&amp;source=',e(r),'&amp;sourceUrl=',e(l),'&amp;content=',c||'gb2312','&amp;pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','http://cwb.assets.jianshu.io/notes/images/5868268/weibo/image_54122e38a237.jpg', '推荐 雷晏 的文章《ReactiveCocoa（RAC)》（ 分享自 @简书 ）','http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weibo','页面编码gb2312|utf-8默认gb2312'));&quot;&gt;&lt;i class='social-icon-sprite social-icon-weibo'&gt;&lt;/i&gt;&lt;span&gt;分享到微博&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;http://cwb.assets.jianshu.io/notes/images/5868268/weibo/image_54122e38a237.jpg&quot; target=&quot;_blank&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-picture&quot;&gt;&lt;/i&gt;&lt;span&gt;下载长微博图片&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+e('http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qzone')+'&amp;title='+e('推荐 雷晏 的文章《ReactiveCocoa（RAC)》'),x=function(){if(!window.open(r,'qzone','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class='social-icon-sprite social-icon-zone'&gt;&lt;/i&gt;&lt;span&gt;分享到QQ空间&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://twitter.com/share?url='+e('http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=twitter')+'&amp;text='+e('推荐 雷晏 的文章《ReactiveCocoa（RAC)》（ 分享自 @jianshucom ）')+'&amp;related='+e('jianshucom'),x=function(){if(!window.open(r,'twitter','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class='social-icon-sprite social-icon-twitter'&gt;&lt;/i&gt;&lt;span&gt;分享到Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=facebook',x=function(){if(!window.open(r,'facebook','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class='social-icon-sprite social-icon-facebook'&gt;&lt;/i&gt;&lt;span&gt;分享到Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://plus.google.com/share?url='+e('http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=google_plus'),x=function(){if(!window.open(r,'google_plus','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class='social-icon-sprite social-icon-google'&gt;&lt;/i&gt;&lt;span&gt;分享到Google+&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e('http://www.jianshu.com/p/74e621583a52?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=douban')+'&amp;title='+e('ReactiveCocoa（RAC)')+'&amp;sel='+e(s)+'&amp;v=1',x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&amp;r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()&quot;&gt;&lt;i class='social-icon-sprite social-icon-douban'&gt;&lt;/i&gt;&lt;span&gt;分享到豆瓣&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;" data-original-title="" title="" class="function-button"><i class="iconfont ic-share"></i></a> <!----></li></ul></div>
+</div>
+<div class="note-bottom"><div class="main"><div class="title">被以下专题收入，发现更多相似内容</div> <!----> <div class="include-collection"><!----> <a href="http://www.jianshu.com/c/2ffaa203eb6a?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/Snip20161012_2.png"><div class="name">iOS 开发 </div></a><a href="http://www.jianshu.com/c/f9fe0b264e93?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/android.jpg"><div class="name">iOS开发记录</div></a><a href="http://www.jianshu.com/c/e9892dccd0ca?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/1463318266.jpg"><div class="name">将来跳槽用</div></a><a href="http://www.jianshu.com/c/fc5664b5a2da?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/1464454023.jpg"><div class="name">自己尝试等装一下</div></a><a href="http://www.jianshu.com/c/fffc06853562?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/1461810297.jpg"><div class="name">算法或者代码</div></a><a href="http://www.jianshu.com/c/a360e817a1fa?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/1460254639.jpg"><div class="name">平时收藏</div></a><a href="http://www.jianshu.com/c/8714ccc4eb35?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/1462121858.jpg"><div class="name">橙红科技有限公司</div></a><a href="http://www.jianshu.com/c/498543d3ca2e?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/App_Store_iOS_7_1024px_1117460_easyicon.png"><div class="name">iOS 砖家纪实录</div></a><a href="http://www.jianshu.com/c/3233d1a249ca?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/162902612251cbd95971b82.png"><div class="name">iOS Dev...</div></a></div> <!----></div> <!----> <!----></div>
+
+    <script type="application/json" data-name="page-data">{"user_signed_in":false,"locale":"zh-CN","os":"mac","read_mode":"day","read_font":"font2","note_show":{"is_author":false,"is_following_author":false,"is_liked_note":false,"uuid":"496f2643-5747-4883-a0c0-6e9cc84a98f9"},"note":{"id":5868268,"slug":"74e621583a52","user_id":2363289,"notebook_id":6362714,"commentable":true,"likes_count":14,"views_count":251,"public_wordage":3694,"comments_count":4,"author":{"total_wordage":15294,"followers_count":93,"total_likes_count":157}}}</script>
+    
+    <script src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/babel-polyfill-fad9919805cc73e375ad.js"></script>
+    <script src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/web-base-fad9919805cc73e375ad.js"></script>
+<script src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/web-fad9919805cc73e375ad.js"></script>
+    
+    <script src="ReactiveCocoa%EF%BC%88RAC%29%20-%20%E7%AE%80%E4%B9%A6_files/entry-fad9919805cc73e375ad.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35169517-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?0c0e9d9b1e7d617b3e6842e85b9fb068";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+  
+
+<!----><!----></body></html>
