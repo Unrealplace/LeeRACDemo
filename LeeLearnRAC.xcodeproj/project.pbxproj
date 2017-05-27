@@ -14,6 +14,9 @@
 		B64D3ADA1ED4780F00C5157B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64D3AD81ED4780F00C5157B /* Main.storyboard */; };
 		B64D3ADC1ED4780F00C5157B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64D3ADB1ED4780F00C5157B /* Assets.xcassets */; };
 		B64D3ADF1ED4780F00C5157B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64D3ADD1ED4780F00C5157B /* LaunchScreen.storyboard */; };
+		FACEE9521ED922FF0075A33B /* LeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACEE9511ED922FF0075A33B /* LeeTableViewController.m */; };
+		FACEE9581ED927FD0075A33B /* LeeRACSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = FACEE9571ED927FD0075A33B /* LeeRACSignal.m */; };
+		FACEE95B1ED92D5C0075A33B /* LeeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACEE95A1ED92D5C0075A33B /* LeeBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,12 @@
 		B64D3ADB1ED4780F00C5157B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B64D3ADE1ED4780F00C5157B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B64D3AE01ED4780F00C5157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACEE9501ED922FF0075A33B /* LeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeTableViewController.h; sourceTree = "<group>"; };
+		FACEE9511ED922FF0075A33B /* LeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeTableViewController.m; sourceTree = "<group>"; };
+		FACEE9561ED927FD0075A33B /* LeeRACSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeRACSignal.h; sourceTree = "<group>"; };
+		FACEE9571ED927FD0075A33B /* LeeRACSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeRACSignal.m; sourceTree = "<group>"; };
+		FACEE9591ED92D5C0075A33B /* LeeBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeBaseViewController.h; sourceTree = "<group>"; };
+		FACEE95A1ED92D5C0075A33B /* LeeBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeBaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,12 @@
 				B64D3AD31ED4780F00C5157B /* AppDelegate.m */,
 				B64D3AD51ED4780F00C5157B /* ViewController.h */,
 				B64D3AD61ED4780F00C5157B /* ViewController.m */,
+				FACEE9501ED922FF0075A33B /* LeeTableViewController.h */,
+				FACEE9511ED922FF0075A33B /* LeeTableViewController.m */,
+				FACEE9591ED92D5C0075A33B /* LeeBaseViewController.h */,
+				FACEE95A1ED92D5C0075A33B /* LeeBaseViewController.m */,
+				FACEE9561ED927FD0075A33B /* LeeRACSignal.h */,
+				FACEE9571ED927FD0075A33B /* LeeRACSignal.m */,
 				B64D3AD81ED4780F00C5157B /* Main.storyboard */,
 				B64D3ADB1ED4780F00C5157B /* Assets.xcassets */,
 				B64D3ADD1ED4780F00C5157B /* LaunchScreen.storyboard */,
@@ -225,6 +240,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACEE95B1ED92D5C0075A33B /* LeeBaseViewController.m in Sources */,
+				FACEE9581ED927FD0075A33B /* LeeRACSignal.m in Sources */,
+				FACEE9521ED922FF0075A33B /* LeeTableViewController.m in Sources */,
 				B64D3AD71ED4780F00C5157B /* ViewController.m in Sources */,
 				B64D3AD41ED4780F00C5157B /* AppDelegate.m in Sources */,
 				B64D3AD11ED4780F00C5157B /* main.m in Sources */,
