@@ -22,6 +22,9 @@
 		B69ECCFF1EDBD06F00CA0FCB /* Test.geojson in Resources */ = {isa = PBXBuildFile; fileRef = B69ECCFE1EDBD06F00CA0FCB /* Test.geojson */; };
 		B69ECD011EDBD0A100CA0FCB /* Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = B69ECD001EDBD0A100CA0FCB /* Test.plist */; };
 		B69ECD041EDBD29A00CA0FCB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = B69ECD031EDBD29A00CA0FCB /* Person.m */; };
+		B69ECD071EDBF72C00CA0FCB /* LeeRACCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B69ECD061EDBF72C00CA0FCB /* LeeRACCommand.m */; };
+		B69ECD0A1EDC02C100CA0FCB /* LeeRACMulticastConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B69ECD091EDC02C100CA0FCB /* LeeRACMulticastConnection.m */; };
+		B69ECD0D1EDC0C1000CA0FCB /* LeeReactiveCocoausage.m in Sources */ = {isa = PBXBuildFile; fileRef = B69ECD0C1EDC0C1000CA0FCB /* LeeReactiveCocoausage.m */; };
 		FACEE9521ED922FF0075A33B /* LeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACEE9511ED922FF0075A33B /* LeeTableViewController.m */; };
 		FACEE9581ED927FD0075A33B /* LeeRACSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = FACEE9571ED927FD0075A33B /* LeeRACSignal.m */; };
 		FACEE95B1ED92D5C0075A33B /* LeeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACEE95A1ED92D5C0075A33B /* LeeBaseViewController.m */; };
@@ -55,6 +58,12 @@
 		B69ECD001EDBD0A100CA0FCB /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Test.plist; sourceTree = "<group>"; };
 		B69ECD021EDBD29A00CA0FCB /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		B69ECD031EDBD29A00CA0FCB /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		B69ECD051EDBF72C00CA0FCB /* LeeRACCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeRACCommand.h; sourceTree = "<group>"; };
+		B69ECD061EDBF72C00CA0FCB /* LeeRACCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeRACCommand.m; sourceTree = "<group>"; };
+		B69ECD081EDC02C100CA0FCB /* LeeRACMulticastConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeRACMulticastConnection.h; sourceTree = "<group>"; };
+		B69ECD091EDC02C100CA0FCB /* LeeRACMulticastConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeRACMulticastConnection.m; sourceTree = "<group>"; };
+		B69ECD0B1EDC0C1000CA0FCB /* LeeReactiveCocoausage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeReactiveCocoausage.h; sourceTree = "<group>"; };
+		B69ECD0C1EDC0C1000CA0FCB /* LeeReactiveCocoausage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeReactiveCocoausage.m; sourceTree = "<group>"; };
 		FACEE9501ED922FF0075A33B /* LeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeTableViewController.h; sourceTree = "<group>"; };
 		FACEE9511ED922FF0075A33B /* LeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeeTableViewController.m; sourceTree = "<group>"; };
 		FACEE9561ED927FD0075A33B /* LeeRACSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeeRACSignal.h; sourceTree = "<group>"; };
@@ -124,6 +133,12 @@
 				B69ECCF91EDBC6E400CA0FCB /* LeeRACReplaySubject.m */,
 				B69ECCFB1EDBCA2300CA0FCB /* LeeRACTupleAndRACSequence.h */,
 				B69ECCFC1EDBCA2300CA0FCB /* LeeRACTupleAndRACSequence.m */,
+				B69ECD051EDBF72C00CA0FCB /* LeeRACCommand.h */,
+				B69ECD061EDBF72C00CA0FCB /* LeeRACCommand.m */,
+				B69ECD081EDC02C100CA0FCB /* LeeRACMulticastConnection.h */,
+				B69ECD091EDC02C100CA0FCB /* LeeRACMulticastConnection.m */,
+				B69ECD0B1EDC0C1000CA0FCB /* LeeReactiveCocoausage.h */,
+				B69ECD0C1EDC0C1000CA0FCB /* LeeReactiveCocoausage.m */,
 				B69ECD021EDBD29A00CA0FCB /* Person.h */,
 				B69ECD031EDBD29A00CA0FCB /* Person.m */,
 				B69ECCFE1EDBD06F00CA0FCB /* Test.geojson */,
@@ -280,15 +295,18 @@
 			files = (
 				B69ECCF71EDBC1E100CA0FCB /* LeeRACSubject.m in Sources */,
 				FACEE95B1ED92D5C0075A33B /* LeeBaseViewController.m in Sources */,
+				B69ECD071EDBF72C00CA0FCB /* LeeRACCommand.m in Sources */,
 				FACEE9581ED927FD0075A33B /* LeeRACSignal.m in Sources */,
 				B69ECCF11EDBBAA600CA0FCB /* LeeRACSubscriber.m in Sources */,
 				FACEE9521ED922FF0075A33B /* LeeTableViewController.m in Sources */,
 				B64D3AD71ED4780F00C5157B /* ViewController.m in Sources */,
 				B69ECD041EDBD29A00CA0FCB /* Person.m in Sources */,
 				B64D3AD41ED4780F00C5157B /* AppDelegate.m in Sources */,
+				B69ECD0D1EDC0C1000CA0FCB /* LeeReactiveCocoausage.m in Sources */,
 				B69ECCFA1EDBC6E400CA0FCB /* LeeRACReplaySubject.m in Sources */,
 				B69ECCFD1EDBCA2300CA0FCB /* LeeRACTupleAndRACSequence.m in Sources */,
 				B64D3AD11ED4780F00C5157B /* main.m in Sources */,
+				B69ECD0A1EDC02C100CA0FCB /* LeeRACMulticastConnection.m in Sources */,
 				B69ECCF41EDBBAC100CA0FCB /* LeeRACDisposable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

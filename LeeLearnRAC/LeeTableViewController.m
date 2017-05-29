@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dataArray = @[@"LeeRACSignal",@"LeeRACSubscriber",@"LeeRACDisposable",@"LeeRACSubject",@"LeeRACReplaySubject",@"LeeRACTupleAndRACSequence"];
+    self.dataArray = @[@"LeeRACSignal",@"LeeRACSubscriber",@"LeeRACDisposable",@"LeeRACSubject",@"LeeRACReplaySubject",@"LeeRACTupleAndRACSequence",@"LeeRACCommand",@"LeeRACMulticastConnection",@"LeeReactiveCocoausage"];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"iddd"];
    
 }

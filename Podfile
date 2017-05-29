@@ -7,4 +7,6 @@ target 'LeeLearnRAC' do
 
   # Pods for LeeLearnRAC
  pod 'ReactiveCocoa','~> 2.5'
+ pod 'Masonry', '~> 1.0.2'
+
 end

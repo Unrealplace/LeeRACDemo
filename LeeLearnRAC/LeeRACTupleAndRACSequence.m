@@ -74,6 +74,8 @@
     //底层实现，当信号被订阅，会遍历集合中的原始值，映射成新值，并保存到数组中
     NSArray * newArr = [[dataArr.rac_sequence.signal map:^id(id value) {
         NSLog(@"%@",value);
+//        RACTupleUnpack(NSString * key,NSString * val) = value;
+//        NSLog(@"%@----->>>%@",key,val);
         return [Person personWith:value];
     }] toArray];
     NSLog(@"%@",newArr);
