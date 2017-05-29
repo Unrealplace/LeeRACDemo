@@ -51,18 +51,42 @@
 //    3.1 sendNext底层其实就是执行了subscriber的nextBlock
     
     
-    RACSignal * signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    //热信号
+    RACSignal * signal = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         
-        NSLog(@"订阅者发出信号");
+        NSLog(@"订阅者0发出信号");
+        //传数据出去
         [subscriber sendNext:@11];
         
         return nil;
         
+    }] subscribeNext:^(id x) {
+        //接受订阅者发出的数据，前提是订阅者内部发出数据，不发的话，不会触发
+        NSLog(@"订阅了信号后发生的改变%@",x);
     }];
    
-    [signal subscribeNext:^(id x) {
-    NSLog(@"订阅了信号%@",x);
+    
+    //冷信号
+    RACSignal * signal1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+       
+        NSLog(@"订阅者1发出信号");
+        //传数据出去
+        [subscriber sendNext:@11];
+
+         return nil;
     }];
+    
+    //订阅了信号，但是没有值改变也不会触发任何东西
+    RACSignal * signal2 = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSLog(@"订阅者2发出信号");
+        [subscriber sendNext:nil];
+        return nil;
+    }] subscribeNext:^(id x) {
+        
+        //接受订阅者发出的数据
+        NSLog(@"订阅了信号2后发生的改变%@",x);
+    }];
+    
     
     
     
